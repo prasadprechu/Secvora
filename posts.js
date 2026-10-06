@@ -1,3 +1,4 @@
+```javascript
 const posts = [
 
     {
@@ -5,7 +6,7 @@ const posts = [
         category: "AI & LLM Security",
         description: "Learn how AI model dependencies, datasets, tools, and third-party components can introduce new security risks.",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80",
-        url: "https://www.prophaze.com/webinar-ai-native-firewalling-for-llm-agentic-applications/"
+        url: "#"
     },
 
     {
@@ -99,4 +100,5 @@ const posts = [
         url: "#"
     }
 
-
+];
+```
