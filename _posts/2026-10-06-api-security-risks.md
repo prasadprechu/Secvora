@@ -3,7 +3,7 @@ layout: post
 title: "API Security: Common Risks and Practical Defenses"
 category: "API Security"
 category_slug: api-security
-date: 2026-10-07
+date: 2026-10-06
 permalink: /api-security-risks/
 description: "Explore common API security risks and practical approaches to authentication, authorization, discovery, validation, and runtime protection."
 read_time: 7
