@@ -6,6 +6,8 @@ category_slug: ddos-protection
 date: 2026-10-06
 permalink: /modern-ddos/
 description: "Explore why modern DDoS defense requires more than network capacity and how application-aware protection can maintain service availability."
+focus_keyword: "Modern DDoS Attacks"
+visual: traffic-wave
 read_time: 7
 author: "Secvora Research"
 ---
