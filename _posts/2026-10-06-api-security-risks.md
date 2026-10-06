@@ -6,6 +6,8 @@ category_slug: api-security
 date: 2026-10-06
 permalink: /api-security-risks/
 description: "Explore common API security risks and practical approaches to authentication, authorization, discovery, validation, and runtime protection."
+focus_keyword: "API Security"
+visual: api-network
 read_time: 7
 author: "Secvora Research"
 ---
