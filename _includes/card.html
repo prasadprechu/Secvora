@@ -1,28 +1,133 @@
 <article class="card">
-  <a class="card-image" href="{{ post.url | relative_url }}">
+
+  <a class="card-image card-visual {{ post.category_slug }}"
+     href="{{ post.url | relative_url }}">
+
     {% if post.image %}
-      <img src="{{ post.image }}" alt="{{ post.title | escape }}" loading="lazy">
+
+      <img
+        src="{{ post.image }}"
+        alt="{{ post.title | escape }}"
+        loading="lazy"
+      >
+
     {% else %}
-      <span>SECVORA</span>
+
+      {% if post.category == "AI & LLM Security" %}
+
+        <div class="visual-content">
+          <span class="visual-label">AI SECURITY</span>
+          <strong>AI AGENT<br>SECURITY</strong>
+          <small>Autonomous AI Systems</small>
+          <span class="visual-icon">◈</span>
+        </div>
+
+      {% elsif post.category == "API Security" %}
+
+        <div class="visual-content">
+          <span class="visual-label">API SECURITY</span>
+          <strong>API<br>SECURITY</strong>
+          <small>Common Risks & Defenses</small>
+          <span class="visual-icon">⌘</span>
+        </div>
+
+      {% elsif post.category == "WAAP" %}
+
+        <div class="visual-content">
+          <span class="visual-label">WAAP</span>
+          <strong>WEB & API<br>PROTECTION</strong>
+          <small>Modern Application Security</small>
+          <span class="visual-icon">◉</span>
+        </div>
+
+      {% elsif post.category == "WAF" %}
+
+        <div class="visual-content">
+          <span class="visual-label">WAF</span>
+          <strong>VIRTUAL<br>PATCHING</strong>
+          <small>Closing the Vulnerability Window</small>
+          <span class="visual-icon">⬡</span>
+        </div>
+
+      {% elsif post.category == "DDoS Protection" %}
+
+        <div class="visual-content">
+          <span class="visual-label">DDOS PROTECTION</span>
+          <strong>MODERN<br>DDOS ATTACKS</strong>
+          <small>Application Defense</small>
+          <span class="visual-icon">⚡</span>
+        </div>
+
+      {% elsif post.category == "Bot Protection" %}
+
+        <div class="visual-content">
+          <span class="visual-label">BOT PROTECTION</span>
+          <strong>MALICIOUS<br>BOTS</strong>
+          <small>Detecting Automated Abuse</small>
+          <span class="visual-icon">◇</span>
+        </div>
+
+      {% elsif post.category == "Threat Intelligence" %}
+
+        <div class="visual-content">
+          <span class="visual-label">THREAT INTELLIGENCE</span>
+          <strong>EMERGING<br>THREATS</strong>
+          <small>Research & Analysis</small>
+          <span class="visual-icon">◎</span>
+        </div>
+
+      {% elsif post.category == "Cloud Security" %}
+
+        <div class="visual-content">
+          <span class="visual-label">CLOUD SECURITY</span>
+          <strong>CLOUD<br>SECURITY RISKS</strong>
+          <small>Protecting Modern Applications</small>
+          <span class="visual-icon">☁</span>
+        </div>
+
+      {% else %}
+
+        <div class="visual-content">
+          <span class="visual-label">SECVORA</span>
+          <strong>CYBERSECURITY<br>INSIGHTS</strong>
+          <small>Security Research & Analysis</small>
+          <span class="visual-icon">◈</span>
+        </div>
+
+      {% endif %}
+
     {% endif %}
+
   </a>
 
+
   <div class="card-body">
-    <a class="post-category" href="{{ '/' | append: post.category_slug | append: '/' | relative_url }}">
+
+    <a
+      class="post-category"
+      href="{{ '/' | append: post.category_slug | append: '/' | relative_url }}"
+    >
       {{ post.category }}
     </a>
 
     <h3>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+      </a>
     </h3>
 
-    <p>{{ post.description }}</p>
+    <p>
+      {{ post.description }}
+    </p>
 
     <div class="meta">
       {{ post.date | date: '%b %-d, %Y' }}
+
       {% if post.read_time %}
         · {{ post.read_time }} min read
       {% endif %}
     </div>
+
   </div>
+
 </article>
