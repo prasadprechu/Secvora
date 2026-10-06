@@ -59,7 +59,10 @@ layout: default
     <div class="heading">
       <div>
         <span class="eyebrow">LATEST</span>
-        <h2>Latest Cybersecurity Insights</h2>
+
+        <h2>
+          Latest Cybersecurity Insights
+        </h2>
       </div>
 
       <a href="{{ '/blog/' | relative_url }}">
@@ -87,13 +90,15 @@ layout: default
       <div class="heading">
 
         <div>
-          <span class="eyebrow">
-            {{ category.name }}
-          </span>
 
           <h2>
-            {{ category.subtitle }}
+            {{ category.name }}
           </h2>
+
+          <span class="category-subtitle">
+            {{ category.subtitle }}
+          </span>
+
         </div>
 
         <a href="{{ '/' | append: category.slug | append: '/' | relative_url }}">
@@ -106,9 +111,11 @@ layout: default
       {% if cp.size > 0 %}
 
         <div class="grid">
+
           {% for post in cp limit:3 %}
             {% include card.html post=post %}
           {% endfor %}
+
         </div>
 
       {% else %}
