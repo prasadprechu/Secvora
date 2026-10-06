@@ -2,11 +2,11 @@
 const posts = [
 
     {
-        title: "What Is AI Supply Chain Security?",
+        title: "What Is AI Model Supply Chain Security?",
         category: "AI & LLM Security",
-        description: "Understand the security risks across AI models, datasets, dependencies, tools, and third-party components.",
+        description: "Learn how AI model dependencies, datasets, tools, and third-party components can introduce new security risks.",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80",
-        url: "#"
+        url: "https://www.prophaze.com/webinar-ai-native-firewalling-for-llm-agentic-applications/"
     },
 
     {
