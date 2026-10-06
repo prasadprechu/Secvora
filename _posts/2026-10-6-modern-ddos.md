@@ -3,7 +3,7 @@ layout: post
 title: "Modern DDoS Attacks: Why Application Defense Matters"
 category: "DDoS Protection"
 category_slug: ddos-protection
-date: 2026-10-10
+date: 2026-10-6
 permalink: /modern-ddos/
 description: "Explore why modern DDoS defense requires more than network capacity and how application-aware protection can maintain service availability."
 read_time: 7
