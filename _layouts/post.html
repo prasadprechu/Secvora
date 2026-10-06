@@ -1,76 +1,250 @@
 ---
-layout: default
----
+
+## layout: default
 
 <article class="article">
 
-  <div class="container article-head">
+  <!-- =========================
+       ARTICLE HERO
+  ========================== -->
 
-    <a
-      class="post-category"
-      href="{{ '/' | append: page.category_slug | append: '/' | relative_url }}"
-    >
-      {{ page.category }}
-    </a>
+  <header class="article-hero">
 
-    <h1>
-      {{ page.title }}
-    </h1>
+```
+<div class="container article-hero-inner">
 
-    {% if page.description %}
-      <p class="deck">
-        {{ page.description }}
-      </p>
-    {% endif %}
+  <a
+    class="article-category"
+    href="{{ '/' | append: page.category_slug | append: '/' | relative_url }}"
+  >
+    {{ page.category }}
+  </a>
 
-    <div class="meta">
+  <h1>
+    {{ page.title }}
+  </h1>
+
+  {% if page.description %}
+    <p class="article-deck">
+      {{ page.description }}
+    </p>
+  {% endif %}
+
+  <div class="article-meta">
+
+    <span>
       {{ page.author | default: 'Secvora Research' }}
-      ·
+    </span>
+
+    <span>•</span>
+
+    <span>
       {{ page.date | date: '%B %-d, %Y' }}
+    </span>
 
-      {% if page.read_time %}
-        · {{ page.read_time }} min read
-      {% endif %}
-    </div>
+    {% if page.read_time %}
+      <span>•</span>
 
-    {% if page.image %}
-      <img
-        class="article-image"
-        src="{{ page.image }}"
-        alt="{{ page.title | escape }}"
-      >
+      <span>
+        {{ page.read_time }} min read
+      </span>
     {% endif %}
 
   </div>
 
+  {% if page.image %}
 
-  <div class="container article-body">
+    <div class="article-hero-image">
 
-    <aside>
+      <img
+        src="{{ page.image | relative_url }}"
+        alt="{{ page.title | escape }}"
+      >
 
-      <div class="toc">
+    </div>
 
-        <b>IN THIS ARTICLE</b>
+  {% else %}
 
-        <ul>
-          {% for x in page.toc %}
-            <li>
-              <a href="#{{ x.id }}">
-                {{ x.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+    <div class="article-hero-visual">
+
+      <div class="hero-visual-grid"></div>
+
+      <div class="hero-visual-content">
+
+        <span>SECVORA RESEARCH</span>
+
+        <strong>
+          {{ page.category | upcase }}
+        </strong>
+
+        <small>
+          SECURITY INSIGHTS • THREAT ANALYSIS • RESEARCH
+        </small>
 
       </div>
 
-    </aside>
+      <div class="hero-visual-shield">
+        S
+      </div>
 
-
-    <div class="prose">
-      {{ content }}
     </div>
 
+  {% endif %}
+
+</div>
+```
+
+  </header>
+
+  <!-- =========================
+       ARTICLE CONTENT
+  ========================== -->
+
+  <div class="container article-layout">
+
+```
+<!-- TABLE OF CONTENTS -->
+
+<aside class="article-sidebar">
+
+  {% if page.toc %}
+
+    <div class="toc">
+
+      <span class="toc-label">
+        IN THIS ARTICLE
+      </span>
+
+      <ul>
+
+        {% for x in page.toc %}
+
+          <li>
+
+            <a href="#{{ x.id }}">
+              {{ x.title }}
+            </a>
+
+          </li>
+
+        {% endfor %}
+
+      </ul>
+
+    </div>
+
+  {% endif %}
+
+</aside>
+
+
+<!-- MAIN ARTICLE -->
+
+<div class="article-content">
+
+  <div class="prose">
+
+    {{ content }}
+
   </div>
+
+
+  <!-- KEY TAKEAWAYS -->
+
+  <div class="article-takeaways">
+
+    <div class="takeaways-label">
+      KEY TAKEAWAYS
+    </div>
+
+    <p>
+      Security teams should evaluate emerging threats,
+      understand their attack surface, and combine
+      preventive controls with continuous monitoring.
+    </p>
+
+  </div>
+
+
+  <!-- PROPHAZE RESOURCE -->
+
+  <div class="security-resource">
+
+    <div class="resource-eyebrow">
+      SECURITY RESOURCE
+    </div>
+
+    <h3>
+      Explore Modern Application Security
+    </h3>
+
+    <p>
+      Learn how modern application and API protection
+      approaches can help defend applications against
+      evolving security threats.
+    </p>
+
+    <a
+      href="https://www.prophaze.com/"
+      target="_blank"
+      rel="noopener"
+    >
+      Explore Prophaze →
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- =========================
+       RELATED ARTICLES
+  ========================== -->
+
+  <section class="related-section">
+
+```
+<div class="container">
+
+  <div class="related-heading">
+
+    <span class="eyebrow">
+      CONTINUE READING
+    </span>
+
+    <h2>
+      Related Security Insights
+    </h2>
+
+  </div>
+
+  <div class="related-grid">
+
+    {% assign related_count = 0 %}
+
+    {% for post in site.posts %}
+
+      {% if post.category == page.category and post.url != page.url %}
+
+        {% if related_count < 3 %}
+
+          {% include card.html post=post %}
+
+          {% assign related_count = related_count | plus: 1 %}
+
+        {% endif %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+</div>
+```
+
+  </section>
 
 </article>
