@@ -3,7 +3,7 @@ layout: post
 title: "WAF Virtual Patching: Closing the Vulnerability Window"
 category: "WAF"
 category_slug: waf
-date: 2026-10-09
+date: 2026-10-06
 permalink: /waf-virtual-patching/
 description: "Learn how WAF virtual patching can reduce application exposure while teams work on permanent vulnerability fixes."
 read_time: 7
