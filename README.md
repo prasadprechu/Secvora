@@ -281,6 +281,9 @@ Secvora is an independent cybersecurity publication intended for educational, re
 Security information should be evaluated in the context of your own environment, architecture, threat model, and security requirements.
 
 ---
+<p align="center">
+  <img src="assets/images/Secvora.png" alt="Secvora Logo" width="500">
+</p>
 
 <p align="center">
   <strong>Secvora</strong><br>
