@@ -6,6 +6,8 @@ category_slug: ai-llm-security
 date: 2026-10-06
 permalink: /ai-agent-security/
 description: "Understand the security challenges of AI agents, including prompt injection, excessive permissions, unsafe tool use, and data exposure."
+focus_keyword: "AI Agent Security"
+visual: neural
 read_time: 7
 author: "Secvora Research"
 ---
