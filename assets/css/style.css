@@ -337,6 +337,9 @@ nav a:hover,
    CATEGORY COLORS
 ========================= */
 
+
+/* AI & LLM SECURITY */
+
 .card-visual.ai-llm-security {
   background:
     radial-gradient(
@@ -350,6 +353,9 @@ nav a:hover,
       #5b21b6
     );
 }
+
+
+/* API SECURITY */
 
 .card-visual.api-security {
   background:
@@ -365,6 +371,9 @@ nav a:hover,
     );
 }
 
+
+/* WAAP */
+
 .card-visual.waap {
   background:
     radial-gradient(
@@ -378,6 +387,9 @@ nav a:hover,
       #0891b2
     );
 }
+
+
+/* WAF */
 
 .card-visual.waf {
   background:
@@ -393,6 +405,9 @@ nav a:hover,
     );
 }
 
+
+/* DDOS */
+
 .card-visual.ddos-protection {
   background:
     radial-gradient(
@@ -406,6 +421,9 @@ nav a:hover,
       #dc2626
     );
 }
+
+
+/* BOT */
 
 .card-visual.bot-protection {
   background:
@@ -421,6 +439,9 @@ nav a:hover,
     );
 }
 
+
+/* THREAT INTELLIGENCE */
+
 .card-visual.threat-intelligence {
   background:
     radial-gradient(
@@ -434,6 +455,9 @@ nav a:hover,
       #d97706
     );
 }
+
+
+/* CLOUD SECURITY */
 
 .card-visual.cloud-security {
   background:
@@ -1573,14 +1597,14 @@ nav a:hover,
 
   background:
     radial-gradient(
-      circle at 10% 10%,
-      rgba(91, 75, 219, 0.18),
-      transparent 25%
+      circle at 12% 20%,
+      rgba(91, 75, 219, 0.16),
+      transparent 28%
     ),
     radial-gradient(
-      circle at 90% 75%,
-      rgba(37, 99, 235, 0.14),
-      transparent 28%
+      circle at 88% 70%,
+      rgba(37, 99, 235, 0.13),
+      transparent 30%
     ),
     #080d18;
 
@@ -1591,74 +1615,10 @@ nav a:hover,
 
 
 /* =========================
-   FOOTER CYBER GRID
-========================= */
-
-.site-footer::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: 0.045;
-
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,0.5) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.5) 1px,
-      transparent 1px
-    );
-
-  background-size: 34px 34px;
-}
-
-
-/* =========================
-   FOOTER GLOW
-========================= */
-
-.site-footer::after {
-
-  content: "";
-
-  position: absolute;
-
-  width: 300px;
-
-  height: 300px;
-
-  right: -120px;
-
-  top: 100px;
-
-  border-radius: 50%;
-
-  background: rgba(37,99,235,0.10);
-
-  filter: blur(80px);
-
-  pointer-events: none;
-}
-
-
-/* =========================
    SECURITY SIGNAL
 ========================= */
 
 .footer-signal {
-
-  position: relative;
-
-  z-index: 5;
-
   height: 54px;
 
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -1668,42 +1628,36 @@ nav a:hover,
   background:
     linear-gradient(
       90deg,
-      rgba(91,75,219,0.10),
-      transparent 40%,
+      rgba(91,75,219,0.08),
+      transparent 35%,
       rgba(37,99,235,0.08)
     );
 }
 
 .signal-line {
-
   height: 100%;
 
   display: flex;
 
   align-items: center;
 
-  gap: 9px;
+  gap: 0;
 }
 
 .signal-dot {
-
   width: 7px;
 
   height: 7px;
-
-  flex: 0 0 auto;
 
   border-radius: 50%;
 
   background: #7c6cff;
 
   box-shadow:
-    0 0 0 4px rgba(124,108,255,0.08),
     0 0 14px rgba(124,108,255,0.75);
 }
 
 .signal-track {
-
   height: 1px;
 
   width: 90px;
@@ -1711,8 +1665,8 @@ nav a:hover,
   background:
     linear-gradient(
       90deg,
-      rgba(124,108,255,0.6),
-      rgba(255,255,255,0.06)
+      rgba(124,108,255,0.55),
+      rgba(255,255,255,0.08)
     );
 }
 
@@ -1722,10 +1676,6 @@ nav a:hover,
 ========================= */
 
 .footer-main {
-
-  position: relative;
-
-  z-index: 5;
 
   padding: 70px 0 65px;
 
@@ -1785,11 +1735,10 @@ nav a:hover,
 
   font-size: 17px;
 
-  font-weight: 850;
-
   box-shadow:
-    0 8px 25px rgba(91,75,219,0.30);
+    0 8px 25px rgba(91,75,219,0.25);
 }
+
 
 .footer-description {
 
@@ -1801,7 +1750,7 @@ nav a:hover,
 
   font-size: 13px;
 
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 
@@ -1840,8 +1789,6 @@ nav a:hover,
 
   height: 7px;
 
-  flex: 0 0 auto;
-
   border-radius: 50%;
 
   background: #10b981;
@@ -1878,6 +1825,7 @@ nav a:hover,
 
   text-transform: uppercase;
 }
+
 
 .footer-column > a {
 
@@ -1919,9 +1867,9 @@ nav a:hover,
 
   height: 6px;
 
-  flex-shrink: 0;
-
   border-radius: 50%;
+
+  flex-shrink: 0;
 }
 
 
@@ -1930,67 +1878,43 @@ nav a:hover,
 ========================= */
 
 .dot-ai-llm-security {
-
   background: #8b5cf6;
-
-  box-shadow:
-    0 0 8px rgba(139,92,246,0.65);
+  box-shadow: 0 0 8px rgba(139,92,246,0.65);
 }
 
 .dot-api-security {
-
   background: #3b82f6;
-
-  box-shadow:
-    0 0 8px rgba(59,130,246,0.65);
+  box-shadow: 0 0 8px rgba(59,130,246,0.65);
 }
 
 .dot-waap {
-
   background: #06b6d4;
-
-  box-shadow:
-    0 0 8px rgba(6,182,212,0.65);
+  box-shadow: 0 0 8px rgba(6,182,212,0.65);
 }
 
 .dot-waf {
-
   background: #6366f1;
-
-  box-shadow:
-    0 0 8px rgba(99,102,241,0.65);
+  box-shadow: 0 0 8px rgba(99,102,241,0.65);
 }
 
 .dot-ddos-protection {
-
   background: #ef4444;
-
-  box-shadow:
-    0 0 8px rgba(239,68,68,0.65);
+  box-shadow: 0 0 8px rgba(239,68,68,0.65);
 }
 
 .dot-bot-protection {
-
   background: #10b981;
-
-  box-shadow:
-    0 0 8px rgba(16,185,129,0.65);
+  box-shadow: 0 0 8px rgba(16,185,129,0.65);
 }
 
 .dot-threat-intelligence {
-
   background: #f59e0b;
-
-  box-shadow:
-    0 0 8px rgba(245,158,11,0.65);
+  box-shadow: 0 0 8px rgba(245,158,11,0.65);
 }
 
 .dot-cloud-security {
-
   background: #14b8a6;
-
-  box-shadow:
-    0 0 8px rgba(20,184,166,0.65);
+  box-shadow: 0 0 8px rgba(20,184,166,0.65);
 }
 
 
@@ -2000,69 +1924,59 @@ nav a:hover,
 
 .footer-focus p {
 
-  margin: 0 0 10px;
+  margin: 0 0 9px;
 
   color: #8f9bb0;
 
   font-size: 13px;
-
-  line-height: 1.5;
 }
 
 
 /* =========================
-   FOOTER SHIELD
+   FOOTER SHIELD GRAPHIC
 ========================= */
 
 .footer-shield {
 
-  position: relative;
+  width: 72px;
 
-  width: 76px;
+  height: 82px;
 
-  height: 88px;
-
-  margin-top: 18px;
+  margin-top: 16px;
 
   display: grid;
 
   place-items: center;
+
+  clip-path: polygon(
+    50% 0%,
+    92% 15%,
+    88% 62%,
+    50% 100%,
+    12% 62%,
+    8% 15%
+  );
 
   background:
     linear-gradient(
       135deg,
-      rgba(91,75,219,0.5),
-      rgba(37,99,235,0.15)
+      rgba(91,75,219,0.45),
+      rgba(37,99,235,0.18)
     );
 
-  clip-path: polygon(
-    50% 0%,
-    92% 15%,
-    88% 62%,
-    50% 100%,
-    12% 62%,
-    8% 15%
-  );
-
-  filter:
-    drop-shadow(
-      0 0 18px rgba(91,75,219,0.25)
-    );
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .footer-shield-inner {
 
-  width: 55px;
+  width: 52px;
 
-  height: 65px;
+  height: 61px;
 
   display: grid;
 
   place-items: center;
 
-  background:
-    rgba(255,255,255,0.08);
-
   clip-path: polygon(
     50% 0%,
     92% 15%,
@@ -2072,34 +1986,14 @@ nav a:hover,
     8% 15%
   );
 
-  color: rgba(255,255,255,0.72);
+  background:
+    rgba(255,255,255,0.08);
+
+  color: rgba(255,255,255,0.65);
 
   font-size: 21px;
 
-  font-weight: 850;
-}
-
-
-/* =========================
-   FOOTER SECURITY LINE
-========================= */
-
-.footer-security-line {
-
-  position: relative;
-
-  z-index: 5;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(124,108,255,0.4),
-      rgba(37,99,235,0.4),
-      transparent
-    );
+  font-weight: 800;
 }
 
 
@@ -2108,10 +2002,6 @@ nav a:hover,
 ========================= */
 
 .footer-bottom {
-
-  position: relative;
-
-  z-index: 5;
 
   min-height: 72px;
 
@@ -2153,36 +2043,31 @@ nav a:hover,
 }
 
 
-/* =====================================================
+/* =========================
    TABLET
-===================================================== */
+========================= */
 
 @media (max-width: 900px) {
 
   .hero-grid {
-
     grid-template-columns: 1fr;
 
     gap: 40px;
   }
 
   .hero-card {
-
     display: none;
   }
 
   .grid {
-
     grid-template-columns: repeat(2, 1fr);
   }
 
   .article-body {
-
     grid-template-columns: 1fr;
   }
 
   .toc {
-
     position: static;
 
     margin-bottom: 30px;
@@ -2208,31 +2093,27 @@ nav a:hover,
 }
 
 
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
 @media (max-width: 640px) {
 
   .container {
-
     width: calc(100% - 28px);
   }
 
   .site-header {
-
     height: 68px;
   }
 
   nav {
-
     gap: 14px;
 
     font-size: 12px;
   }
 
   .hero-grid {
-
     min-height: auto;
 
     padding: 65px 0;
@@ -2241,32 +2122,26 @@ nav a:hover,
   .hero h1,
   .banner h1,
   .category-banner h1 {
-
     font-size: 45px;
   }
 
   .hero-sub {
-
     font-size: 18px;
   }
 
   .section {
-
     padding: 55px 0;
   }
 
   .grid {
-
     grid-template-columns: 1fr;
   }
 
   .heading {
-
     display: block;
   }
 
   .heading > a {
-
     display: inline-block;
 
     margin-top: 10px;
@@ -2274,53 +2149,43 @@ nav a:hover,
 
   .banner,
   .category-banner {
-
     padding: 60px 0;
   }
 
   .category-banner h2 {
-
     font-size: 20px;
   }
 
   .category-banner p,
   .banner p {
-
     font-size: 16px;
   }
 
   .article {
-
     padding: 55px 0;
   }
 
   .article-head h1 {
-
     font-size: 43px;
   }
 
   .deck {
-
     font-size: 18px;
   }
 
   .article-body {
-
     display: block;
   }
 
   .prose {
-
     font-size: 16px;
   }
 
   .simple-page {
-
     padding: 65px 0;
   }
 
   .simple-page h1 {
-
     font-size: 43px;
   }
 
@@ -2330,25 +2195,20 @@ nav a:hover,
   ========================= */
 
   .site-footer {
-
     margin-top: 55px;
   }
 
   .footer-signal {
-
     height: 45px;
   }
 
   .signal-track {
-
     width: 45px;
   }
 
   .footer-main {
 
-    grid-template-columns:
-      1fr
-      1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 38px 25px;
 
@@ -2358,22 +2218,18 @@ nav a:hover,
   }
 
   .footer-brand {
-
     grid-column: 1 / -1;
   }
 
   .footer-description {
-
     max-width: 100%;
   }
 
   .footer-focus {
-
     grid-column: 1 / -1;
   }
 
   .footer-shield {
-
     display: none;
   }
 
@@ -2397,17 +2253,14 @@ nav a:hover,
   /* Card visual */
 
   .visual-content {
-
     padding: 22px;
   }
 
   .visual-content strong {
-
     font-size: 26px;
   }
 
   .visual-label {
-
     font-size: 9px;
   }
 
