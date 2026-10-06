@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <title>
     {% if page.title %}
@@ -22,57 +27,283 @@
     rel="stylesheet"
     href="{{ '/assets/css/style.css' | relative_url }}"
   >
+
 </head>
+
 
 <body>
 
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header class="site-header">
+
     <div class="container header-inner">
 
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <span class="brand-mark">S</span>
-        <span>Secvora</span>
+      <a
+        class="brand"
+        href="{{ '/' | relative_url }}"
+      >
+
+        <span class="brand-mark">
+          S
+        </span>
+
+        <span>
+          Secvora
+        </span>
+
       </a>
 
+
       <nav>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
+
+        <a href="{{ '/' | relative_url }}">
+          Home
+        </a>
+
+        <a href="{{ '/blog/' | relative_url }}">
+          Blog
+        </a>
+
+        <a href="{{ '/about/' | relative_url }}">
+          About
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
   <main>
+
     {{ content }}
+
   </main>
 
-  <footer>
 
-    <div class="container footer-inner">
+  <!-- =========================
+       CYBERSECURITY FOOTER
+  ========================== -->
 
-      <div>
-        <strong>Secvora</strong>
-        <p>
-          Cybersecurity, AI and application security insights.
-        </p>
-      </div>
+  <footer class="site-footer">
 
-      <div>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        ·
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-        ·
-        <a href="{{ '/about/' | relative_url }}">About</a>
+
+    <!-- SECURITY GRAPHIC AREA -->
+
+    <div class="footer-signal">
+
+      <div class="container">
+
+        <div class="signal-line">
+
+          <span class="signal-dot"></span>
+
+          <span class="signal-track"></span>
+
+          <span class="signal-dot"></span>
+
+          <span class="signal-track"></span>
+
+          <span class="signal-dot"></span>
+
+          <span class="signal-track"></span>
+
+          <span class="signal-dot"></span>
+
+        </div>
+
       </div>
 
     </div>
+
+
+    <!-- FOOTER MAIN -->
+
+    <div class="container footer-main">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand">
+
+        <a
+          class="footer-logo"
+          href="{{ '/' | relative_url }}"
+        >
+
+          <span class="footer-logo-mark">
+            S
+          </span>
+
+          <span>
+            Secvora
+          </span>
+
+        </a>
+
+
+        <p class="footer-description">
+
+          Independent cybersecurity insights covering
+          AI security, application security, threat
+          intelligence, and modern cyber defense.
+
+        </p>
+
+
+        <!-- SECURITY STATUS -->
+
+        <div class="security-status">
+
+          <span class="status-indicator"></span>
+
+          <span>
+            Security Research Online
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- EXPLORE -->
+
+      <div class="footer-column">
+
+        <h3>
+          Explore
+        </h3>
+
+        <a href="{{ '/' | relative_url }}">
+          Home
+        </a>
+
+        <a href="{{ '/blog/' | relative_url }}">
+          All Articles
+        </a>
+
+        <a href="{{ '/about/' | relative_url }}">
+          About Secvora
+        </a>
+
+      </div>
+
+
+      <!-- CATEGORIES -->
+
+      <div class="footer-column footer-categories">
+
+        <h3>
+          Categories
+        </h3>
+
+
+        {% for category in site.categories_list %}
+
+          <a
+            href="{{ '/' | append: category.slug | append: '/' | relative_url }}"
+          >
+
+            <span class="category-dot dot-{{ category.slug }}"></span>
+
+            {{ category.name }}
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+
+      <!-- SECURITY FOCUS -->
+
+      <div class="footer-column footer-focus">
+
+        <h3>
+          Security Focus
+        </h3>
+
+        <p>
+          AI &amp; LLM Security
+        </p>
+
+        <p>
+          Application Security
+        </p>
+
+        <p>
+          Threat Intelligence
+        </p>
+
+        <p>
+          Cloud &amp; Infrastructure
+        </p>
+
+
+        <div class="footer-shield">
+
+          <div class="footer-shield-inner">
+            ✓
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
 
     <div class="container footer-bottom">
-      © {{ 'now' | date: '%Y' }} Secvora. All rights reserved.
+
+
+      <div class="footer-bottom-left">
+
+        © {{ 'now' | date: '%Y' }} Secvora.
+
+        All rights reserved.
+
+      </div>
+
+
+      <div class="footer-bottom-links">
+
+        <a href="{{ '/' | relative_url }}">
+          Home
+        </a>
+
+        <span>·</span>
+
+        <a href="{{ '/blog/' | relative_url }}">
+          Blog
+        </a>
+
+        <span>·</span>
+
+        <a href="{{ '/about/' | relative_url }}">
+          About
+        </a>
+
+      </div>
+
+
     </div>
+
 
   </footer>
 
+
 </body>
+
 </html>
