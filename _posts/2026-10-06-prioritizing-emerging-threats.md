@@ -6,6 +6,8 @@ category_slug: threat-intelligence
 date: 2026-10-06
 permalink: /prioritizing-emerging-threats/
 description: "Learn how threat intelligence helps security teams identify emerging risks, prioritize threats, and turn security data into practical action."
+focus_keyword: "Emerging Threats"
+visual: radar
 read_time: 7
 author: "Secvora Research"
 ---
