@@ -1,4 +1,3 @@
-```javascript
 const posts = [
 
     {
@@ -100,5 +99,4 @@ const posts = [
         url: "#"
     }
 
-];
-```
+
