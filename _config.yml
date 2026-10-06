@@ -3,7 +3,7 @@ description: Cybersecurity publication covering AI security, application securit
 url: "https://prasadprechu.github.io"
 baseurl: "/Secvora"
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: /:title/
 collections: {}
 categories_list:
   - name: AI & LLM Security
