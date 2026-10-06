@@ -3,7 +3,7 @@ layout: post
 title: "Cloud Security Risks in Modern Applications"
 category: "Cloud Security"
 category_slug: cloud-security
-date: 2026-10-13
+date: 2026-10-06
 permalink: /cloud-security-risks/
 description: "Explore major cloud security risks affecting modern applications, including identity, misconfiguration, exposed services, and supply-chain dependencies."
 read_time: 7
