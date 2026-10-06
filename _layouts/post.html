@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<article class="article">
+
+  <div class="container article-head">
+
+    <a
+      class="post-category"
+      href="{{ '/' | append: page.category_slug | append: '/' | relative_url }}"
+    >
+      {{ page.category }}
+    </a>
+
+    <h1>
+      {{ page.title }}
+    </h1>
+
+    {% if page.description %}
+      <p class="deck">
+        {{ page.description }}
+      </p>
+    {% endif %}
+
+    <div class="meta">
+      {{ page.author | default: 'Secvora Research' }}
+      ·
+      {{ page.date | date: '%B %-d, %Y' }}
+
+      {% if page.read_time %}
+        · {{ page.read_time }} min read
+      {% endif %}
+    </div>
+
+    {% if page.image %}
+      <img
+        class="article-image"
+        src="{{ page.image }}"
+        alt="{{ page.title | escape }}"
+      >
+    {% endif %}
+
+  </div>
+
+
+  <div class="container article-body">
+
+    <aside>
+
+      <div class="toc">
+
+        <b>IN THIS ARTICLE</b>
+
+        <ul>
+          {% for x in page.toc %}
+            <li>
+              <a href="#{{ x.id }}">
+                {{ x.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+  </div>
+
+</article>
