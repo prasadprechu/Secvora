@@ -1,97 +1,258 @@
 <article class="card">
 
-  <a class="card-image card-visual {{ post.category_slug }}"
-     href="{{ post.url | relative_url }}">
+  <!-- =========================
+       FEATURED VISUAL
+  ========================== -->
+
+  <a
+    class="card-image card-visual {{ post.category_slug }}"
+    href="{{ post.url | relative_url }}"
+    aria-label="{{ post.title | escape }}"
+  >
 
     {% if post.image %}
 
+      <!-- Real featured image if available -->
+
       <img
-        src="{{ post.image }}"
+        src="{{ post.image | relative_url }}"
         alt="{{ post.title | escape }}"
         loading="lazy"
       >
 
     {% else %}
 
+      <!-- AI & LLM SECURITY -->
+
       {% if post.category == "AI & LLM Security" %}
 
         <div class="visual-content">
-          <span class="visual-label">AI SECURITY</span>
-          <strong>AI AGENT<br>SECURITY</strong>
-          <small>Autonomous AI Systems</small>
-          <span class="visual-icon">◈</span>
+
+          <span class="visual-label">
+            AI SECURITY
+          </span>
+
+          <strong>
+            AI AGENT<br>
+            SECURITY
+          </strong>
+
+          <small>
+            Autonomous AI Systems
+          </small>
+
+          <span class="visual-icon">
+            ◈
+          </span>
+
         </div>
+
+
+      <!-- API SECURITY -->
 
       {% elsif post.category == "API Security" %}
 
         <div class="visual-content">
-          <span class="visual-label">API SECURITY</span>
-          <strong>API<br>SECURITY</strong>
-          <small>Common Risks & Defenses</small>
-          <span class="visual-icon">⌘</span>
+
+          <span class="visual-label">
+            API SECURITY
+          </span>
+
+          <strong>
+            API<br>
+            SECURITY
+          </strong>
+
+          <small>
+            Common Risks &amp; Practical Defenses
+          </small>
+
+          <span class="visual-icon">
+            ⌘
+          </span>
+
         </div>
+
+
+      <!-- WAAP -->
 
       {% elsif post.category == "WAAP" %}
 
         <div class="visual-content">
-          <span class="visual-label">WAAP</span>
-          <strong>WEB & API<br>PROTECTION</strong>
-          <small>Modern Application Security</small>
-          <span class="visual-icon">◉</span>
+
+          <span class="visual-label">
+            WAAP
+          </span>
+
+          <strong>
+            WEB &amp; API<br>
+            PROTECTION
+          </strong>
+
+          <small>
+            Modern Application Security
+          </small>
+
+          <span class="visual-icon">
+            ◉
+          </span>
+
         </div>
+
+
+      <!-- WAF -->
 
       {% elsif post.category == "WAF" %}
 
         <div class="visual-content">
-          <span class="visual-label">WAF</span>
-          <strong>VIRTUAL<br>PATCHING</strong>
-          <small>Closing the Vulnerability Window</small>
-          <span class="visual-icon">⬡</span>
+
+          <span class="visual-label">
+            WAF
+          </span>
+
+          <strong>
+            VIRTUAL<br>
+            PATCHING
+          </strong>
+
+          <small>
+            Closing the Vulnerability Window
+          </small>
+
+          <span class="visual-icon">
+            ⬡
+          </span>
+
         </div>
+
+
+      <!-- DDOS PROTECTION -->
 
       {% elsif post.category == "DDoS Protection" %}
 
         <div class="visual-content">
-          <span class="visual-label">DDOS PROTECTION</span>
-          <strong>MODERN<br>DDOS ATTACKS</strong>
-          <small>Application Defense</small>
-          <span class="visual-icon">⚡</span>
+
+          <span class="visual-label">
+            DDOS PROTECTION
+          </span>
+
+          <strong>
+            MODERN<br>
+            DDOS ATTACKS
+          </strong>
+
+          <small>
+            Application-Aware Defense
+          </small>
+
+          <span class="visual-icon">
+            ⚡
+          </span>
+
         </div>
+
+
+      <!-- BOT PROTECTION -->
 
       {% elsif post.category == "Bot Protection" %}
 
         <div class="visual-content">
-          <span class="visual-label">BOT PROTECTION</span>
-          <strong>MALICIOUS<br>BOTS</strong>
-          <small>Detecting Automated Abuse</small>
-          <span class="visual-icon">◇</span>
+
+          <span class="visual-label">
+            BOT PROTECTION
+          </span>
+
+          <strong>
+            MALICIOUS<br>
+            BOTS
+          </strong>
+
+          <small>
+            Detecting Automated Abuse
+          </small>
+
+          <span class="visual-icon">
+            ◇
+          </span>
+
         </div>
+
+
+      <!-- THREAT INTELLIGENCE -->
 
       {% elsif post.category == "Threat Intelligence" %}
 
         <div class="visual-content">
-          <span class="visual-label">THREAT INTELLIGENCE</span>
-          <strong>EMERGING<br>THREATS</strong>
-          <small>Research & Analysis</small>
-          <span class="visual-icon">◎</span>
+
+          <span class="visual-label">
+            THREAT INTELLIGENCE
+          </span>
+
+          <strong>
+            EMERGING<br>
+            THREATS
+          </strong>
+
+          <small>
+            Research &amp; Security Analysis
+          </small>
+
+          <span class="visual-icon">
+            ◎
+          </span>
+
         </div>
+
+
+      <!-- CLOUD SECURITY -->
 
       {% elsif post.category == "Cloud Security" %}
 
         <div class="visual-content">
-          <span class="visual-label">CLOUD SECURITY</span>
-          <strong>CLOUD<br>SECURITY RISKS</strong>
-          <small>Protecting Modern Applications</small>
-          <span class="visual-icon">☁</span>
+
+          <span class="visual-label">
+            CLOUD SECURITY
+          </span>
+
+          <strong>
+            CLOUD<br>
+            SECURITY RISKS
+          </strong>
+
+          <small>
+            Protecting Modern Applications
+          </small>
+
+          <span class="visual-icon">
+            ☁
+          </span>
+
         </div>
+
+
+      <!-- FALLBACK -->
 
       {% else %}
 
         <div class="visual-content">
-          <span class="visual-label">SECVORA</span>
-          <strong>CYBERSECURITY<br>INSIGHTS</strong>
-          <small>Security Research & Analysis</small>
-          <span class="visual-icon">◈</span>
+
+          <span class="visual-label">
+            SECVORA
+          </span>
+
+          <strong>
+            CYBERSECURITY<br>
+            INSIGHTS
+          </strong>
+
+          <small>
+            Security Research &amp; Analysis
+          </small>
+
+          <span class="visual-icon">
+            ◈
+          </span>
+
         </div>
 
       {% endif %}
@@ -101,7 +262,13 @@
   </a>
 
 
+  <!-- =========================
+       CARD CONTENT
+  ========================== -->
+
   <div class="card-body">
+
+    <!-- Category -->
 
     <a
       class="post-category"
@@ -110,22 +277,43 @@
       {{ post.category }}
     </a>
 
+
+    <!-- Article title -->
+
     <h3>
+
       <a href="{{ post.url | relative_url }}">
+
         {{ post.title }}
+
       </a>
+
     </h3>
 
-    <p>
-      {{ post.description }}
-    </p>
+
+    <!-- Article description -->
+
+    {% if post.description %}
+
+      <p>
+        {{ post.description }}
+      </p>
+
+    {% endif %}
+
+
+    <!-- Article metadata -->
 
     <div class="meta">
+
       {{ post.date | date: '%b %-d, %Y' }}
 
       {% if post.read_time %}
+
         · {{ post.read_time }} min read
+
       {% endif %}
+
     </div>
 
   </div>
