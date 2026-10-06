@@ -5,259 +5,207 @@
   ========================== -->
 
   <a
-    class="card-image card-visual {{ post.category_slug }}"
+    class="card-image card-visual {{ post.category_slug }} visual-{{ post.visual | default: 'grid' }}"
     href="{{ post.url | relative_url }}"
     aria-label="{{ post.title | escape }}"
   >
 
-    {% if post.image %}
+    <div class="visual-bg">
 
-      <!-- Real featured image if available -->
+      <!-- GRAPHIC 1: NEURAL -->
+      {% if post.visual == "neural" %}
 
-      <img
-        src="{{ post.image | relative_url }}"
-        alt="{{ post.title | escape }}"
-        loading="lazy"
-      >
+        <div class="neural-network">
+          <span class="node n1"></span>
+          <span class="node n2"></span>
+          <span class="node n3"></span>
+          <span class="node n4"></span>
+          <span class="node n5"></span>
+          <span class="node n6"></span>
 
-    {% else %}
+          <span class="line l1"></span>
+          <span class="line l2"></span>
+          <span class="line l3"></span>
+          <span class="line l4"></span>
+          <span class="line l5"></span>
+        </div>
 
-      <!-- AI & LLM SECURITY -->
 
-      {% if post.category == "AI & LLM Security" %}
+      <!-- GRAPHIC 2: API NETWORK -->
+      {% elsif post.visual == "api-network" %}
 
-        <div class="visual-content">
+        <div class="api-graphic">
 
-          <span class="visual-label">
-            AI SECURITY
-          </span>
+          <div class="api-box api-box-1">
+            API
+          </div>
 
-          <strong>
-            AI AGENT<br>
-            SECURITY
-          </strong>
+          <div class="api-box api-box-2">
+            AUTH
+          </div>
 
-          <small>
-            Autonomous AI Systems
-          </small>
+          <div class="api-box api-box-3">
+            DATA
+          </div>
 
-          <span class="visual-icon">
-            ◈
-          </span>
+          <span class="api-line api-line-1"></span>
+          <span class="api-line api-line-2"></span>
+
+          <div class="api-core">
+            /
+          </div>
 
         </div>
 
 
-      <!-- API SECURITY -->
+      <!-- GRAPHIC 3: WAAP SHIELD -->
+      {% elsif post.visual == "waap-shield" %}
 
-      {% elsif post.category == "API Security" %}
+        <div class="waap-graphic">
 
-        <div class="visual-content">
+          <div class="shield">
+            <div class="shield-inner"></div>
+          </div>
 
-          <span class="visual-label">
-            API SECURITY
-          </span>
+          <span class="shield-ring ring-1"></span>
+          <span class="shield-ring ring-2"></span>
 
-          <strong>
-            API<br>
-            SECURITY
-          </strong>
-
-          <small>
-            Common Risks &amp; Practical Defenses
-          </small>
-
-          <span class="visual-icon">
-            ⌘
-          </span>
+          <span class="pulse-dot"></span>
 
         </div>
 
 
-      <!-- WAAP -->
+      <!-- GRAPHIC 4: WAF PATCH -->
+      {% elsif post.visual == "shield-grid" %}
 
-      {% elsif post.category == "WAAP" %}
+        <div class="waf-graphic">
 
-        <div class="visual-content">
+          <div class="waf-grid"></div>
 
-          <span class="visual-label">
-            WAAP
-          </span>
+          <div class="patch-window">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-          <strong>
-            WEB &amp; API<br>
-            PROTECTION
-          </strong>
-
-          <small>
-            Modern Application Security
-          </small>
-
-          <span class="visual-icon">
-            ◉
-          </span>
+          <div class="patch-check">
+            ✓
+          </div>
 
         </div>
 
 
-      <!-- WAF -->
+      <!-- GRAPHIC 5: DDOS TRAFFIC -->
+      {% elsif post.visual == "traffic-wave" %}
 
-      {% elsif post.category == "WAF" %}
+        <div class="ddos-graphic">
 
-        <div class="visual-content">
+          <div class="traffic traffic-1"></div>
+          <div class="traffic traffic-2"></div>
+          <div class="traffic traffic-3"></div>
+          <div class="traffic traffic-4"></div>
+          <div class="traffic traffic-5"></div>
 
-          <span class="visual-label">
-            WAF
-          </span>
-
-          <strong>
-            VIRTUAL<br>
-            PATCHING
-          </strong>
-
-          <small>
-            Closing the Vulnerability Window
-          </small>
-
-          <span class="visual-icon">
-            ⬡
-          </span>
+          <div class="traffic-bar"></div>
 
         </div>
 
 
-      <!-- DDOS PROTECTION -->
+      <!-- GRAPHIC 6: BOT -->
+      {% elsif post.visual == "bot-network" %}
 
-      {% elsif post.category == "DDoS Protection" %}
+        <div class="bot-graphic">
 
-        <div class="visual-content">
+          <div class="bot-core">
+            <span></span>
+            <span></span>
+          </div>
 
-          <span class="visual-label">
-            DDOS PROTECTION
-          </span>
+          <span class="bot-node bn1"></span>
+          <span class="bot-node bn2"></span>
+          <span class="bot-node bn3"></span>
+          <span class="bot-node bn4"></span>
 
-          <strong>
-            MODERN<br>
-            DDOS ATTACKS
-          </strong>
-
-          <small>
-            Application-Aware Defense
-          </small>
-
-          <span class="visual-icon">
-            ⚡
-          </span>
+          <span class="bot-connection bc1"></span>
+          <span class="bot-connection bc2"></span>
+          <span class="bot-connection bc3"></span>
+          <span class="bot-connection bc4"></span>
 
         </div>
 
 
-      <!-- BOT PROTECTION -->
+      <!-- GRAPHIC 7: THREAT RADAR -->
+      {% elsif post.visual == "radar" %}
 
-      {% elsif post.category == "Bot Protection" %}
+        <div class="radar-graphic">
 
-        <div class="visual-content">
+          <div class="radar-circle radar-1"></div>
+          <div class="radar-circle radar-2"></div>
+          <div class="radar-circle radar-3"></div>
 
-          <span class="visual-label">
-            BOT PROTECTION
-          </span>
+          <div class="radar-cross horizontal"></div>
+          <div class="radar-cross vertical"></div>
 
-          <strong>
-            MALICIOUS<br>
-            BOTS
-          </strong>
+          <div class="radar-sweep"></div>
 
-          <small>
-            Detecting Automated Abuse
-          </small>
-
-          <span class="visual-icon">
-            ◇
-          </span>
+          <span class="radar-point point-1"></span>
+          <span class="radar-point point-2"></span>
+          <span class="radar-point point-3"></span>
 
         </div>
 
 
-      <!-- THREAT INTELLIGENCE -->
+      <!-- GRAPHIC 8: CLOUD -->
+      {% elsif post.visual == "cloud-security" %}
 
-      {% elsif post.category == "Threat Intelligence" %}
+        <div class="cloud-graphic">
 
-        <div class="visual-content">
+          <div class="cloud-shape">
+            <span class="cloud-small"></span>
+            <span class="cloud-main"></span>
+          </div>
 
-          <span class="visual-label">
-            THREAT INTELLIGENCE
-          </span>
+          <div class="cloud-lock">
+            <span class="lock-body"></span>
+            <span class="lock-top"></span>
+          </div>
 
-          <strong>
-            EMERGING<br>
-            THREATS
-          </strong>
-
-          <small>
-            Research &amp; Security Analysis
-          </small>
-
-          <span class="visual-icon">
-            ◎
-          </span>
+          <span class="cloud-node cn1"></span>
+          <span class="cloud-node cn2"></span>
+          <span class="cloud-node cn3"></span>
 
         </div>
 
 
-      <!-- CLOUD SECURITY -->
-
-      {% elsif post.category == "Cloud Security" %}
-
-        <div class="visual-content">
-
-          <span class="visual-label">
-            CLOUD SECURITY
-          </span>
-
-          <strong>
-            CLOUD<br>
-            SECURITY RISKS
-          </strong>
-
-          <small>
-            Protecting Modern Applications
-          </small>
-
-          <span class="visual-icon">
-            ☁
-          </span>
-
-        </div>
-
-
-      <!-- FALLBACK -->
+      <!-- FALLBACK GRAPHIC -->
 
       {% else %}
 
-        <div class="visual-content">
-
-          <span class="visual-label">
-            SECVORA
-          </span>
-
-          <strong>
-            CYBERSECURITY<br>
-            INSIGHTS
-          </strong>
-
-          <small>
-            Security Research &amp; Analysis
-          </small>
-
-          <span class="visual-icon">
-            ◈
-          </span>
-
+        <div class="default-graphic">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
       {% endif %}
 
-    {% endif %}
+    </div>
+
+
+    <!-- FOCUS KEYWORD -->
+
+    <div class="visual-content">
+
+      <span class="visual-label">
+        {{ post.category }}
+      </span>
+
+      <strong>
+        {{ post.focus_keyword }}
+      </strong>
+
+    </div>
 
   </a>
 
@@ -268,8 +216,6 @@
 
   <div class="card-body">
 
-    <!-- Category -->
-
     <a
       class="post-category"
       href="{{ '/' | append: post.category_slug | append: '/' | relative_url }}"
@@ -277,21 +223,11 @@
       {{ post.category }}
     </a>
 
-
-    <!-- Article title -->
-
     <h3>
-
       <a href="{{ post.url | relative_url }}">
-
         {{ post.title }}
-
       </a>
-
     </h3>
-
-
-    <!-- Article description -->
 
     {% if post.description %}
 
@@ -301,17 +237,12 @@
 
     {% endif %}
 
-
-    <!-- Article metadata -->
-
     <div class="meta">
 
       {{ post.date | date: '%b %-d, %Y' }}
 
       {% if post.read_time %}
-
         · {{ post.read_time }} min read
-
       {% endif %}
 
     </div>
