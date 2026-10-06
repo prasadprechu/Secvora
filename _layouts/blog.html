@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section class="banner">
+  <div class="container">
+    <span class="eyebrow">SECVORA BLOG</span>
+
+    <h1>{{ page.title }}</h1>
+
+    <p>{{ page.description }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="filters">
+      <a class="active" href="{{ '/blog/' | relative_url }}">
+        All Articles
+      </a>
+
+      {% for c in site.categories_list %}
+        <a href="{{ '/' | append: c.slug | append: '/' | relative_url }}">
+          {{ c.name }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="grid">
+      {% for post in site.posts %}
+        {% include card.html post=post %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
