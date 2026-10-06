@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/Secvora.png" alt="Secvora Logo" width="110">
+  <img src="assets/images/Secvora.png" alt="Secvora Logo" width="200">
 </p>
 
 <h1 align="center">Secvora</h1>
