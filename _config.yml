@@ -1,7 +1,7 @@
 title: Secvora
 description: Cybersecurity publication covering AI security, application security, threat intelligence, and modern cyber defense.
-url: ""
-baseurl: ""
+url: "https://prasadprechu.github.io"
+baseurl: "/Secvora"
 markdown: kramdown
 permalink: /:categories/:title/
 collections: {}
