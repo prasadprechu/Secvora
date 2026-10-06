@@ -47,7 +47,6 @@ layout: default
 
       </div>
 
-
       {% if page.image %}
 
         <div class="article-hero-image">
@@ -151,36 +150,391 @@ layout: default
       </div>
 
 
-      <div class="security-resource">
+      <!-- PROPHAZE RESOURCE -->
 
-        <div class="resource-eyebrow">
-          SECURITY RESOURCE
+      {% if page.category == "AI & LLM Security" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore AI &amp; LLM Security
+          </h3>
+
+          <p>
+            Explore modern AI and LLM security capabilities
+            designed to protect AI applications, models,
+            and intelligent workloads.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/ai-llm-security/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze AI &amp; LLM Security →
+          </a>
+
         </div>
 
-        <h3>
-          Explore Modern Application Security
-        </h3>
 
-        <p>
-          Learn how modern application and API protection
-          approaches can help defend applications against
-          evolving security threats.
-        </p>
+      {% elsif page.category == "WAAP" %}
 
-        <a
-          href="https://www.prophaze.com/"
-          target="_blank"
-          rel="noopener"
-        >
-          Explore Prophaze →
-        </a>
+        <div class="security-resource">
 
-      </div>
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore WAAP Security
+          </h3>
+
+          <p>
+            Learn how modern Web Application and API Protection
+            helps defend applications against evolving web,
+            API, and automated threats.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/waap-security/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze WAAP →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "API Security" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore API Security
+          </h3>
+
+          <p>
+            Discover modern API security approaches for
+            API discovery, protection, runtime threats,
+            authentication, and authorization.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/api-security/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze API Security →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "WAF" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore WAF Security
+          </h3>
+
+          <p>
+            Learn how modern Web Application Firewall
+            technology helps protect applications against
+            evolving application-layer threats.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/waf-security/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze WAF →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "DDoS Protection" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore DDoS Protection
+          </h3>
+
+          <p>
+            Learn how modern DDoS protection helps defend
+            applications and digital services against
+            volumetric and application-layer attacks.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/ddos-protection/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze DDoS Protection →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "Bot Protection" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore Bot Protection
+          </h3>
+
+          <p>
+            Discover approaches for detecting and mitigating
+            malicious automation, scraping, account abuse,
+            and other bot-driven threats.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/bot-mitigation/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze Bot Protection →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "Cloud Security" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore Cloud WAF Security
+          </h3>
+
+          <p>
+            Learn how cloud-based application protection
+            can help secure modern applications and workloads
+            against evolving web threats.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/cloud-waf/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze Cloud WAF →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "Threat Intelligence" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESEARCH
+          </div>
+
+          <h3>
+            Explore 2026 Security Research
+          </h3>
+
+          <p>
+            Explore research covering AI, API, and application
+            security trends, emerging attack surfaces, and
+            the evolving cybersecurity landscape.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/data_reports_hub/ai-api-application-security-report-2026/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore the 2026 Security Report →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "DNS Security" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore DNS Security
+          </h3>
+
+          <p>
+            Learn how modern DNS security helps protect
+            applications and users from DNS-based threats
+            and infrastructure-level risks.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/dns-security/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze DNS Security →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "CDN" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore CDN Security
+          </h3>
+
+          <p>
+            Discover modern content delivery capabilities
+            designed to improve application performance,
+            availability, and protection.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/cdn/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze CDN →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "Hybrid WAF" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore Hybrid WAF
+          </h3>
+
+          <p>
+            Learn about hybrid Web Application Firewall
+            protection for applications requiring flexible
+            deployment and modern security controls.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/hybrid-waf/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze Hybrid WAF →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "Kubernetes WAF" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore Kubernetes WAF
+          </h3>
+
+          <p>
+            Discover application security protection designed
+            for Kubernetes and cloud-native environments.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/kubernetes-waf/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze Kubernetes WAF →
+          </a>
+
+        </div>
+
+
+      {% elsif page.category == "On-Premises WAF" %}
+
+        <div class="security-resource">
+
+          <div class="resource-eyebrow">
+            SECURITY RESOURCE
+          </div>
+
+          <h3>
+            Explore On-Premises WAF
+          </h3>
+
+          <p>
+            Learn about on-premises Web Application Firewall
+            protection for environments requiring dedicated
+            application security deployment.
+          </p>
+
+          <a
+            href="https://www.prophaze.com/platform/on-premises-waf/"
+            target="_blank"
+            rel="noopener"
+          >
+            Explore Prophaze On-Premises WAF →
+          </a>
+
+        </div>
+
+      {% endif %}
 
     </div>
 
   </div>
 
+
+  <!-- RELATED ARTICLES -->
 
   <section class="related-section">
 
@@ -197,6 +551,7 @@ layout: default
         </h2>
 
       </div>
+
 
       <div class="related-grid">
 
