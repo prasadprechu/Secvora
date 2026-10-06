@@ -3,7 +3,7 @@ layout: post
 title: "How Threat Intelligence Helps Prioritize Emerging Threats"
 category: "Threat Intelligence"
 category_slug: threat-intelligence
-date: 2026-10-12
+date: 2026-10-06
 permalink: /prioritizing-emerging-threats/
 description: "Learn how threat intelligence helps security teams identify emerging risks, prioritize threats, and turn security data into practical action."
 read_time: 7
