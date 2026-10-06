@@ -1,109 +1,189 @@
-<footer class="site-footer">
+<!doctype html>
+<html lang="en">
 
-  <div class="footer-glow footer-glow-one"></div>
-  <div class="footer-glow footer-glow-two"></div>
+<head>
 
-  <div class="container">
+  <meta charset="utf-8">
 
-    <!-- =========================
-         FOOTER TOP
-    ========================== -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-    <div class="footer-top">
+  <title>
+    {% if page.title %}
+      {{ page.title }} | Secvora
+    {% else %}
+      Secvora | Cybersecurity Insights
+    {% endif %}
+  </title>
 
-      <div class="footer-brand">
+  <meta
+    name="description"
+    content="{{ page.description | default: site.description | escape }}"
+  >
 
-        <a class="footer-logo" href="{{ '/' | relative_url }}">
-          <span class="footer-logo-mark">S</span>
-          <span>Secvora</span>
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/style.css' | relative_url }}"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        class="brand"
+        href="{{ '/' | relative_url }}"
+      >
+
+        <span class="brand-mark">
+          S
+        </span>
+
+        <span>
+          Secvora
+        </span>
+
+      </a>
+
+
+      <nav>
+
+        <a href="{{ '/' | relative_url }}">
+          Home
         </a>
 
-        <p>
-          Independent cybersecurity insights covering AI security,
-          application security, threat intelligence, and modern
-          cyber defense.
-        </p>
+        <a href="{{ '/blog/' | relative_url }}">
+          Blog
+        </a>
 
-        <div class="footer-signal">
-          <span class="signal-dot"></span>
-          SECURITY RESEARCH • ACTIVE
-        </div>
+        <a href="{{ '/about/' | relative_url }}">
+          About
+        </a>
 
-      </div>
+      </nav>
+
+    </div>
+
+  </header>
 
 
-      <!-- =========================
-           SECURITY GRAPHIC
-      ========================== -->
 
-      <div class="footer-security-visual">
+  <!-- =========================
+       MAIN CONTENT
+  ========================= -->
 
-        <div class="footer-orbit orbit-one"></div>
-        <div class="footer-orbit orbit-two"></div>
-        <div class="footer-orbit orbit-three"></div>
+  <main>
 
-        <div class="footer-core">
-          <span>S</span>
-        </div>
+    {{ content }}
 
-        <span class="footer-node fn-one"></span>
-        <span class="footer-node fn-two"></span>
-        <span class="footer-node fn-three"></span>
-        <span class="footer-node fn-four"></span>
+  </main>
+
+
+
+  <!-- =========================
+       CYBERSECURITY FOOTER
+  ========================= -->
+
+  <footer class="site-footer">
+
+
+    <!-- SECURITY SIGNAL -->
+
+    <div class="footer-signal">
+
+      <div class="container signal-line">
+
+        <span class="signal-dot"></span>
+
+        <span class="signal-track"></span>
+        <span class="signal-track"></span>
+        <span class="signal-track"></span>
+        <span class="signal-track"></span>
+        <span class="signal-track"></span>
 
       </div>
 
     </div>
 
 
-    <!-- =========================
-         FOOTER COLUMNS
-    ========================== -->
 
-    <div class="footer-columns">
+    <!-- FOOTER MAIN -->
+
+    <div class="container footer-main">
 
 
-      <!-- CATEGORIES -->
+      <!-- BRAND -->
 
-      <div class="footer-column footer-category-column">
+      <div class="footer-brand">
 
-        <span class="footer-heading">
-          EXPLORE SECURITY
-        </span>
+        <a
+          class="footer-logo"
+          href="{{ '/' | relative_url }}"
+        >
 
-        <div class="footer-category-grid">
+          <span class="footer-logo-mark">
+            S
+          </span>
 
-          {% for category in site.categories_list %}
+          <span>
+            Secvora
+          </span>
 
-            <a
-              class="footer-category"
-              href="{{ '/' | append: category.slug | append: '/' | relative_url }}"
-            >
+        </a>
 
-              <span class="footer-category-dot"></span>
 
-              <span>
-                {{ category.name }}
-              </span>
+        <p class="footer-description">
 
-              <span class="footer-arrow">↗</span>
+          Independent cybersecurity insights covering
+          AI security, application security,
+          threat intelligence, cloud defense,
+          and emerging digital threats.
 
-            </a>
+        </p>
 
-          {% endfor %}
+
+        <div class="security-status">
+
+          <span class="status-indicator"></span>
+
+          SECURITY RESEARCH • ACTIVE
+
+        </div>
+
+
+        <!-- SHIELD GRAPHIC -->
+
+        <div class="footer-shield">
+
+          <div class="footer-shield-inner">
+            S
+          </div>
 
         </div>
 
       </div>
 
 
-      <!-- PUBLICATION -->
+
+      <!-- EXPLORE -->
 
       <div class="footer-column">
 
-        <span class="footer-heading">
-          PUBLICATION
-        </span>
+        <h3>
+          Explore
+        </h3>
 
         <a href="{{ '/' | relative_url }}">
           Home
@@ -120,277 +200,102 @@
       </div>
 
 
+
+      <!-- SECURITY TOPICS -->
+
+      <div class="footer-column footer-categories">
+
+        <h3>
+          Security Topics
+        </h3>
+
+
+        {% for category in site.categories_list %}
+
+          <a
+            href="{{ '/' | append: category.slug | append: '/' | relative_url }}"
+          >
+
+            <span
+              class="category-dot dot-{{ category.slug }}"
+            ></span>
+
+            {{ category.name }}
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+
+
       <!-- SECURITY FOCUS -->
 
-      <div class="footer-column">
+      <div class="footer-column footer-focus">
 
-        <span class="footer-heading">
-          SECURITY FOCUS
-        </span>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">01</span>
-          <span>AI &amp; LLM Security</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">02</span>
-          <span>Application Security</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">03</span>
-          <span>Threat Intelligence</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">04</span>
-          <span>Cyber Defense</span>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- =========================
-         SECURITY STRIP
-    ========================== -->
-
-    <div class="footer-security-strip">
-
-      <div class="security-strip-item">
-        <span class="strip-icon">◈</span>
-        <div>
-          <strong>THREAT RESEARCH</strong>
-          <small>Emerging attack intelligence</small>
-        </div>
-      </div>
-
-      <div class="security-strip-item">
-        <span class="strip-icon">⌘</span>
-        <div>
-          <strong>APPLICATION DEFENSE</strong>
-          <small>Modern web &amp; API security</small>
-        </div>
-      </div>
-
-      <div class="security-strip-item">
-        <span class="strip-icon">◉</span>
-        <div>
-          <strong>AI SECURITY</strong>
-          <small>AI, LLM &amp; agent protection</small>
-        </div>
-      </div>
-
-    </div>
-
-
-    <footer class="site-footer">
-
-  <div class="footer-glow footer-glow-one"></div>
-  <div class="footer-glow footer-glow-two"></div>
-
-  <div class="container">
-
-    <!-- =========================
-         FOOTER TOP
-    ========================== -->
-
-    <div class="footer-top">
-
-      <div class="footer-brand">
-
-        <a class="footer-logo" href="{{ '/' | relative_url }}">
-          <span class="footer-logo-mark">S</span>
-          <span>Secvora</span>
-        </a>
+        <h3>
+          Security Focus
+        </h3>
 
         <p>
-          Independent cybersecurity insights covering AI security,
-          application security, threat intelligence, and modern
-          cyber defense.
+          AI &amp; LLM Security
         </p>
 
-        <div class="footer-signal">
-          <span class="signal-dot"></span>
-          SECURITY RESEARCH • ACTIVE
-        </div>
+        <p>
+          Application Security
+        </p>
 
-      </div>
+        <p>
+          Threat Intelligence
+        </p>
 
-
-      <!-- =========================
-           SECURITY GRAPHIC
-      ========================== -->
-
-      <div class="footer-security-visual">
-
-        <div class="footer-orbit orbit-one"></div>
-        <div class="footer-orbit orbit-two"></div>
-        <div class="footer-orbit orbit-three"></div>
-
-        <div class="footer-core">
-          <span>S</span>
-        </div>
-
-        <span class="footer-node fn-one"></span>
-        <span class="footer-node fn-two"></span>
-        <span class="footer-node fn-three"></span>
-        <span class="footer-node fn-four"></span>
+        <p>
+          Cloud Security
+        </p>
 
       </div>
 
     </div>
 
 
-    <!-- =========================
-         FOOTER COLUMNS
-    ========================== -->
 
-    <div class="footer-columns">
+    <!-- FOOTER BOTTOM -->
 
+    <div class="container footer-bottom">
 
-      <!-- CATEGORIES -->
-
-      <div class="footer-column footer-category-column">
-
-        <span class="footer-heading">
-          EXPLORE SECURITY
-        </span>
-
-        <div class="footer-category-grid">
-
-          {% for category in site.categories_list %}
-
-            <a
-              class="footer-category"
-              href="{{ '/' | append: category.slug | append: '/' | relative_url }}"
-            >
-
-              <span class="footer-category-dot"></span>
-
-              <span>
-                {{ category.name }}
-              </span>
-
-              <span class="footer-arrow">↗</span>
-
-            </a>
-
-          {% endfor %}
-
-        </div>
-
+      <div>
+        © {{ 'now' | date: '%Y' }}
+        Secvora. All rights reserved.
       </div>
 
 
-      <!-- PUBLICATION -->
-
-      <div class="footer-column">
-
-        <span class="footer-heading">
-          PUBLICATION
-        </span>
+      <div class="footer-bottom-links">
 
         <a href="{{ '/' | relative_url }}">
           Home
         </a>
 
+        <span>•</span>
+
         <a href="{{ '/blog/' | relative_url }}">
-          All Articles
+          Blog
         </a>
+
+        <span>•</span>
 
         <a href="{{ '/about/' | relative_url }}">
-          About Secvora
+          About
         </a>
 
       </div>
 
-
-      <!-- SECURITY FOCUS -->
-
-      <div class="footer-column">
-
-        <span class="footer-heading">
-          SECURITY FOCUS
-        </span>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">01</span>
-          <span>AI &amp; LLM Security</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">02</span>
-          <span>Application Security</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">03</span>
-          <span>Threat Intelligence</span>
-        </div>
-
-        <div class="footer-focus-item">
-          <span class="focus-number">04</span>
-          <span>Cyber Defense</span>
-        </div>
-
-      </div>
-
     </div>
 
 
-    <!-- =========================
-         SECURITY STRIP
-    ========================== -->
-
-    <div class="footer-security-strip">
-
-      <div class="security-strip-item">
-        <span class="strip-icon">◈</span>
-        <div>
-          <strong>THREAT RESEARCH</strong>
-          <small>Emerging attack intelligence</small>
-        </div>
-      </div>
-
-      <div class="security-strip-item">
-        <span class="strip-icon">⌘</span>
-        <div>
-          <strong>APPLICATION DEFENSE</strong>
-          <small>Modern web &amp; API security</small>
-        </div>
-      </div>
-
-      <div class="security-strip-item">
-        <span class="strip-icon">◉</span>
-        <div>
-          <strong>AI SECURITY</strong>
-          <small>AI, LLM &amp; agent protection</small>
-        </div>
-      </div>
-
-    </div>
+  </footer>
 
 
-    <!-- =========================
-         FOOTER BOTTOM
-    ========================== -->
+</body>
 
-    <div class="footer-bottom">
-
-      <span>
-        © {{ 'now' | date: '%Y' }} Secvora. All rights reserved.
-      </span>
-
-      <span class="footer-status">
-        <span></span>
-        CYBERSECURITY RESEARCH PLATFORM
-      </span>
-
-    </div>
-
-  </div>
-
-</footer>
+</html>
