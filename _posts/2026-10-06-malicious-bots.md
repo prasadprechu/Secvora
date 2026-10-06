@@ -6,6 +6,8 @@ category_slug: bot-protection
 date: 2026-10-06
 permalink: /malicious-bots/
 description: "Understand how malicious bots abuse websites and APIs and why behavioral detection is important for modern bot protection."
+focus_keyword: "Malicious Bots"
+visual: bot-network
 read_time: 7
 author: "Secvora Research"
 ---
