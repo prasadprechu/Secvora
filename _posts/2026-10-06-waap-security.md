@@ -3,7 +3,7 @@ layout: post
 title: "WAAP Security: Protecting Modern Web Applications and APIs"
 category: "WAAP"
 category_slug: waap
-date: 2026-10-08
+date: 2026-10-06
 permalink: /waap-security/
 description: "Understand how WAAP brings web application, API, bot, and DDoS protection together to defend modern internet-facing applications."
 read_time: 7
