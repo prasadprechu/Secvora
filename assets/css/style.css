@@ -2778,7 +2778,6 @@ grid-template-columns: 1fr;
     linear-gradient(120deg, #071225, #101b36 65%, #080f20);
 }
 
-```css
 .article-hero-visual .hero-visual-grid {
   position: absolute;
   inset: 0;
@@ -2939,4 +2938,3 @@ grid-template-columns: 1fr;
 
   .waf-blocked { font-size: 7px; }
 }
-```
