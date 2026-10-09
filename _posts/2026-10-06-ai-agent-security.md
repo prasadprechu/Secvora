@@ -5,6 +5,7 @@ category: "AI & LLM Security"
 category_slug: ai-llm-security
 date: 2026-10-06
 permalink: /ai-agent-security/
+visual: ai-llm-security
 description: "Understand the security challenges of AI agents, including prompt injection, excessive permissions, unsafe tool use, and data exposure."
 focus_keyword: "AI Agent Security"
 visual: neural
