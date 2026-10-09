@@ -61,45 +61,38 @@ layout: default
       ```liquid
 {% else %}
 
-  {% if page.visual == "waf-security" %}
+  {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
 
-    <div class="article-hero-visual waf-hero">
+  <div class="article-hero-visual hero-visual-{{ hero_visual }}">
 
-      <div class="hero-visual-grid"></div>
+    <div class="hero-visual-grid"></div>
 
-      <div class="hero-visual-content">
-        <span>SECVORA SECURITY RESEARCH</span>
-        <strong>WAF<br>VIRTUAL PATCHING</strong>
-        <small>DETECT. BLOCK. PROTECT.</small>
-      </div>
+    <div class="hero-visual-content">
+      <span>SECVORA SECURITY RESEARCH</span>
 
-      <div class="waf-security-scene" aria-hidden="true">
+      <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
 
-        <div class="waf-traffic waf-traffic-one">HTTP REQUEST</div>
-        <div class="waf-traffic waf-traffic-two">EXPLOIT PAYLOAD</div>
-        <div class="waf-traffic-line"></div>
-
-        <div class="waf-firewall">
-          <span class="waf-shield-icon">⬡</span>
-          <strong>WAF</strong>
-          <small>RULE ACTIVE</small>
-        </div>
-
-        <div class="waf-blocked">
-          <span>×</span> ATTACK BLOCKED
-        </div>
-
-        <div class="waf-server">
-          <span class="server-light"></span>
-          <strong>APP</strong>
-          <small>PROTECTED</small>
-        </div>
-
-      </div>
-
+      <small>SECURITY INSIGHTS &amp; RESEARCH</small>
     </div>
 
-  {% else %}
+    <div class="abstract-hero-art" aria-hidden="true">
+      <div class="abstract-orbit orbit-one"></div>
+      <div class="abstract-orbit orbit-two"></div>
+      <div class="abstract-core"></div>
+      <div class="abstract-node node-one"></div>
+      <div class="abstract-node node-two"></div>
+      <div class="abstract-node node-three"></div>
+      <div class="abstract-node node-four"></div>
+      <div class="abstract-beam"></div>
+    </div>
+
+    <span class="hero-visual-index" aria-hidden="true">
+      SEC / {{ hero_visual | upcase }}
+    </span>
+
+  </div>
+
+{% endif %}
 
     <div class="article-hero-visual">
       <div class="hero-visual-grid"></div>
