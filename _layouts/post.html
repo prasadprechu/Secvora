@@ -1,4 +1,4 @@
-```liquid
+
 ---
 layout: default
 ---
@@ -6,72 +6,49 @@ layout: default
 <article class="article">
 
   <header class="article-hero">
-
     <div class="container article-hero-inner">
 
       <a
         class="article-category"
         href="{{ '/' | append: page.category_slug | append: '/' | relative_url }}"
       >
-        {{ page.category }}
+        {{ page.category | default: "Cybersecurity" }}
       </a>
 
-      <h1>
-        {{ page.title }}
-      </h1>
+      <h1>{{ page.title }}</h1>
 
       {% if page.description %}
-        <p class="article-deck">
-          {{ page.description }}
-        </p>
+        <p class="article-deck">{{ page.description }}</p>
       {% endif %}
 
       <div class="article-meta">
-
-        <span>
-          {{ page.author | default: 'Secvora Research' }}
-        </span>
-
-        <span>•</span>
-
-        <span>
-          {{ page.date | date: '%B %-d, %Y' }}
-        </span>
+        <span>{{ page.author | default: "Secvora Research" }}</span>
+        <span aria-hidden="true">•</span>
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
 
         {% if page.read_time %}
-          <span>•</span>
-
-          <span>
-            {{ page.read_time }} min read
-          </span>
+          <span aria-hidden="true">•</span>
+          <span>{{ page.read_time }} min read</span>
         {% endif %}
-
       </div>
 
       {% if page.image %}
-
         <div class="article-hero-image">
           <img
             src="{{ page.image | relative_url }}"
             alt="{{ page.title | escape }}"
           >
         </div>
-
       {% else %}
 
         {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
 
         <div class="article-hero-visual hero-visual-{{ hero_visual }}">
-
-          <div class="hero-visual-grid"></div>
+          <div class="hero-visual-grid" aria-hidden="true"></div>
 
           <div class="hero-visual-content">
             <span>SECVORA SECURITY RESEARCH</span>
-
-            <strong>
-              {{ page.category | default: "CYBERSECURITY" | upcase }}
-            </strong>
-
+            <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
             <small>SECURITY INSIGHTS &amp; RESEARCH</small>
           </div>
 
@@ -89,48 +66,30 @@ layout: default
           <span class="hero-visual-index" aria-hidden="true">
             SEC / {{ hero_visual | upcase }}
           </span>
-
         </div>
 
       {% endif %}
 
     </div>
-
   </header>
-
 
   <div class="container article-layout">
 
     <aside class="article-sidebar">
-
       {% if page.toc %}
-
-        <div class="toc">
-
-          <span class="toc-label">
-            IN THIS ARTICLE
-          </span>
+        <nav class="toc" aria-label="Table of contents">
+          <span class="toc-label">IN THIS ARTICLE</span>
 
           <ul>
-
             {% for x in page.toc %}
-
               <li>
-                <a href="#{{ x.id }}">
-                  {{ x.title }}
-                </a>
+                <a href="#{{ x.id | escape }}">{{ x.title | escape }}</a>
               </li>
-
             {% endfor %}
-
           </ul>
-
-        </div>
-
+        </nav>
       {% endif %}
-
     </aside>
-
 
     <div class="article-content">
 
@@ -138,409 +97,229 @@ layout: default
         {{ content }}
       </div>
 
-
       <div class="article-takeaways">
-
-        <div class="takeaways-label">
-          KEY TAKEAWAYS
-        </div>
+        <div class="takeaways-label">KEY TAKEAWAYS</div>
 
         <p>
           Security teams should evaluate emerging threats,
           understand their attack surface, and combine
           preventive controls with continuous monitoring.
         </p>
-
       </div>
 
-
-      <!-- PROPHAZE RESOURCE -->
+      <!-- CATEGORY-SPECIFIC PROPHAZE RESOURCE -->
 
       {% if page.category == "AI & LLM Security" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore AI &amp; LLM Security</h3>
-
           <p>
-            Explore modern AI and LLM security capabilities
-            designed to protect AI applications, models,
-            and intelligent workloads.
+            Explore security capabilities designed to protect
+            AI applications, models, and intelligent workloads.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/ai-llm-security/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/ai-llm-security/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze AI &amp; LLM Security →
           </a>
-
         </div>
 
       {% elsif page.category == "WAAP" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore WAAP Security</h3>
-
           <p>
-            Learn how modern Web Application and API Protection
-            helps defend applications against evolving web,
-            API, and automated threats.
+            Learn how Web Application and API Protection helps
+            defend applications against web, API, and automated threats.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/waap-security/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/waap-security/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze WAAP →
           </a>
-
         </div>
 
       {% elsif page.category == "API Security" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore API Security</h3>
-
           <p>
-            Discover modern API security approaches for
-            API discovery, protection, runtime threats,
-            authentication, and authorization.
+            Discover API discovery, runtime protection,
+            authentication, authorization, and threat mitigation.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/api-security/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/api-security/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze API Security →
           </a>
-
         </div>
 
       {% elsif page.category == "WAF" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore WAF Security</h3>
-
           <p>
-            Learn how modern Web Application Firewall
-            technology helps protect applications against
-            evolving application-layer threats.
+            Learn how Web Application Firewall technology helps
+            protect applications against application-layer threats.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/waf-security/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/waf-security/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze WAF →
           </a>
-
         </div>
 
       {% elsif page.category == "DDoS Protection" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore DDoS Protection</h3>
-
           <p>
-            Learn how modern DDoS protection helps defend
-            applications and digital services against
-            volumetric and application-layer attacks.
+            Learn how DDoS protection helps defend digital services
+            against volumetric and application-layer attacks.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/ddos-protection/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/ddos-protection/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze DDoS Protection →
           </a>
-
         </div>
 
       {% elsif page.category == "Bot Protection" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Bot Protection</h3>
-
           <p>
-            Discover approaches for detecting and mitigating
-            malicious automation, scraping, account abuse,
-            and other bot-driven threats.
+            Discover methods for mitigating malicious automation,
+            scraping, account abuse, and bot-driven threats.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/bot-mitigation/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/bot-mitigation/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze Bot Protection →
           </a>
-
         </div>
 
       {% elsif page.category == "Cloud Security" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Cloud WAF Security</h3>
-
           <p>
-            Learn how cloud-based application protection
-            can help secure modern applications and workloads
-            against evolving web threats.
+            Learn how cloud-based application protection can help
+            secure modern applications and workloads.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/cloud-waf/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/cloud-waf/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze Cloud WAF →
           </a>
-
         </div>
 
       {% elsif page.category == "Threat Intelligence" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESEARCH
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESEARCH</div>
           <h3>Explore 2026 Security Research</h3>
-
           <p>
             Explore research covering AI, API, and application
-            security trends, emerging attack surfaces, and
-            the evolving cybersecurity landscape.
+            security trends and emerging attack surfaces.
           </p>
-
-          <a
-            href="https://www.prophaze.com/data_reports_hub/ai-api-application-security-report-2026/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/data_reports_hub/ai-api-application-security-report-2026/" target="_blank" rel="noopener noreferrer">
             Explore the 2026 Security Report →
           </a>
-
         </div>
 
       {% elsif page.category == "DNS Security" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore DNS Security</h3>
-
           <p>
-            Learn how modern DNS security helps protect
-            applications and users from DNS-based threats
-            and infrastructure-level risks.
+            Learn how DNS security helps protect applications and
+            users from DNS-based threats and infrastructure risks.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/dns-security/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/dns-security/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze DNS Security →
           </a>
-
         </div>
 
       {% elsif page.category == "CDN" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore CDN Security</h3>
-
           <p>
-            Discover modern content delivery capabilities
-            designed to improve application performance,
-            availability, and protection.
+            Discover content delivery capabilities designed to
+            improve application performance and availability.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/cdn/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/cdn/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze CDN →
           </a>
-
         </div>
 
       {% elsif page.category == "Hybrid WAF" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Hybrid WAF</h3>
-
           <p>
-            Learn about hybrid Web Application Firewall
-            protection for applications requiring flexible
-            deployment and modern security controls.
+            Learn about hybrid Web Application Firewall protection
+            for flexible application security deployments.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/hybrid-waf/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/hybrid-waf/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze Hybrid WAF →
           </a>
-
         </div>
 
       {% elsif page.category == "Kubernetes WAF" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Kubernetes WAF</h3>
-
           <p>
-            Discover application security protection designed
-            for Kubernetes and cloud-native environments.
+            Discover application security protection for Kubernetes
+            and cloud-native environments.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/kubernetes-waf/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/kubernetes-waf/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze Kubernetes WAF →
           </a>
-
         </div>
 
       {% elsif page.category == "On-Premises WAF" %}
 
         <div class="security-resource">
-
-          <div class="resource-eyebrow">
-            SECURITY RESOURCE
-          </div>
-
+          <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore On-Premises WAF</h3>
-
           <p>
             Learn about on-premises Web Application Firewall
-            protection for environments requiring dedicated
-            application security deployment.
+            protection for dedicated security deployments.
           </p>
-
-          <a
-            href="https://www.prophaze.com/platform/on-premises-waf/"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.prophaze.com/platform/on-premises-waf/" target="_blank" rel="noopener noreferrer">
             Explore Prophaze On-Premises WAF →
           </a>
-
         </div>
 
       {% endif %}
 
     </div>
-
   </div>
-
 
   <!-- RELATED ARTICLES -->
 
   <section class="related-section">
-
     <div class="container">
 
       <div class="related-heading">
-
-        <span class="eyebrow">
-          CONTINUE READING
-        </span>
-
+        <span class="eyebrow">CONTINUE READING</span>
         <h2>Related Security Insights</h2>
-
       </div>
 
       <div class="related-grid">
-
         {% assign related_count = 0 %}
 
         {% for post in site.posts %}
-
           {% if post.category == page.category and post.url != page.url %}
-
             {% if related_count < 3 %}
-
               {% include card.html post=post %}
-
               {% assign related_count = related_count | plus: 1 %}
-
             {% endif %}
-
           {% endif %}
-
         {% endfor %}
-
       </div>
 
     </div>
-
   </section>
 
 </article>
-```
