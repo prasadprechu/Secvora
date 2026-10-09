@@ -62,25 +62,53 @@ layout: default
 
   <div class="article-hero-visual">
 
-    <div class="hero-visual-grid"></div>
+    {% if page.visual == "shield-grid" %}
 
-    <div class="hero-visual-content">
+      <div class="hero-visual-grid"></div>
 
-      <span>SECVORA RESEARCH</span>
+      <div class="hero-visual-content">
 
-      <strong>
-        {{ page.category | upcase }}
-      </strong>
+        <span>SECVORA RESEARCH</span>
 
-      <small>
-        SECURITY INSIGHTS • THREAT ANALYSIS • RESEARCH
-      </small>
+        <strong>
+          WAF<br>
+          VIRTUAL PATCHING
+        </strong>
 
-    </div>
+        <small>
+          APPLICATION SECURITY • VULNERABILITY DEFENSE
+        </small>
 
-    <div class="hero-visual-shield">
-      S
-    </div>
+      </div>
+
+      <div class="hero-visual-shield">
+        S
+      </div>
+
+
+    {% else %}
+
+      <div class="hero-visual-grid"></div>
+
+      <div class="hero-visual-content">
+
+        <span>SECVORA RESEARCH</span>
+
+        <strong>
+          {{ page.category | upcase }}
+        </strong>
+
+        <small>
+          SECURITY INSIGHTS • THREAT ANALYSIS • RESEARCH
+        </small>
+
+      </div>
+
+      <div class="hero-visual-shield">
+        S
+      </div>
+
+    {% endif %}
 
   </div>
 
