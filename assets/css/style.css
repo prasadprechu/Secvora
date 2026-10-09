@@ -2938,3 +2938,212 @@ grid-template-columns: 1fr;
 
   .waf-blocked { font-size: 7px; }
 }
+
+/* Secvora: Category-specific abstract article hero */
+
+.article-hero-visual {
+  --hero-accent: #60a5fa;
+  --hero-accent-rgb: 96, 165, 250;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 300px;
+  background:
+    radial-gradient(
+      circle at 76% 48%,
+      rgba(var(--hero-accent-rgb), 0.24),
+      transparent 34%
+    ),
+    linear-gradient(120deg, #071225, #101b36 68%, #080f20);
+}
+
+.article-hero-visual .hero-visual-content {
+  position: relative;
+  z-index: 4;
+  width: 48%;
+}
+
+.article-hero-visual .hero-visual-content strong {
+  color: #f8fafc;
+  line-height: 1.12;
+}
+
+.article-hero-visual .hero-visual-content small {
+  color: var(--hero-accent);
+}
+
+.abstract-hero-art {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 5%;
+  width: 40%;
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(var(--hero-accent-rgb), 0.12),
+    transparent 68%
+  );
+}
+
+.abstract-orbit {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(var(--hero-accent-rgb), 0.58);
+  border-radius: 50%;
+  transform: rotate(-28deg) scaleY(0.72);
+  box-shadow: 0 0 25px rgba(var(--hero-accent-rgb), 0.08);
+}
+
+.orbit-two {
+  inset: 4%;
+  transform: rotate(55deg) scaleY(0.72);
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.abstract-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--hero-accent);
+  border-radius: 32%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(var(--hero-accent-rgb), 0.85),
+    rgba(var(--hero-accent-rgb), 0.12) 58%,
+    #0b1530
+  );
+  box-shadow:
+    0 0 24px rgba(var(--hero-accent-rgb), 0.4),
+    inset 0 0 20px rgba(var(--hero-accent-rgb), 0.22);
+}
+
+.abstract-node {
+  position: absolute;
+  width: 9%;
+  aspect-ratio: 1;
+  border: 1px solid var(--hero-accent);
+  border-radius: 50%;
+  background: #101b36;
+  box-shadow: 0 0 16px rgba(var(--hero-accent-rgb), 0.6);
+}
+
+.node-one { top: 13%; left: 43%; }
+.node-two { top: 42%; right: 5%; }
+.node-three { bottom: 12%; left: 39%; }
+.node-four { top: 44%; left: 5%; }
+
+.abstract-beam {
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  width: 74%;
+  border-top: 1px solid rgba(var(--hero-accent-rgb), 0.6);
+  transform: rotate(-24deg);
+}
+
+.hero-visual-index {
+  position: absolute;
+  z-index: 4;
+  right: 20px;
+  bottom: 16px;
+  color: rgba(226, 232, 240, 0.58);
+  font: 9px/1.4 monospace;
+  letter-spacing: 1.4px;
+}
+
+/* Category palettes */
+
+.hero-visual-ai-llm-security {
+  --hero-accent: #c4b5fd;
+  --hero-accent-rgb: 167, 139, 250;
+}
+
+.hero-visual-waap {
+  --hero-accent: #60a5fa;
+  --hero-accent-rgb: 59, 130, 246;
+}
+
+.hero-visual-waf,
+.hero-visual-waf-security {
+  --hero-accent: #67e8f9;
+  --hero-accent-rgb: 34, 211, 238;
+}
+
+.hero-visual-api-security {
+  --hero-accent: #c4b5fd;
+  --hero-accent-rgb: 139, 92, 246;
+}
+
+.hero-visual-ddos-protection {
+  --hero-accent: #fca5a5;
+  --hero-accent-rgb: 239, 68, 68;
+}
+
+.hero-visual-bot-protection {
+  --hero-accent: #6ee7b7;
+  --hero-accent-rgb: 16, 185, 129;
+}
+
+.hero-visual-threat-intelligence {
+  --hero-accent: #fcd34d;
+  --hero-accent-rgb: 245, 158, 11;
+}
+
+.hero-visual-dns-security {
+  --hero-accent: #7dd3fc;
+  --hero-accent-rgb: 14, 165, 233;
+}
+
+.hero-visual-cdn {
+  --hero-accent: #fdba74;
+  --hero-accent-rgb: 249, 115, 22;
+}
+
+.hero-visual-cloud-security {
+  --hero-accent: #93c5fd;
+  --hero-accent-rgb: 96, 165, 250;
+}
+
+.hero-visual-hybrid-waf {
+  --hero-accent: #5eead4;
+  --hero-accent-rgb: 20, 184, 166;
+}
+
+.hero-visual-kubernetes-waf {
+  --hero-accent: #a5b4fc;
+  --hero-accent-rgb: 99, 102, 241;
+}
+
+.hero-visual-on-premises-waf {
+  --hero-accent: #cbd5e1;
+  --hero-accent-rgb: 148, 163, 184;
+}
+
+@media (max-width: 640px) {
+  .article-hero-visual {
+    min-height: 280px;
+  }
+
+  .article-hero-visual .hero-visual-content {
+    width: 65%;
+  }
+
+  .abstract-hero-art {
+    right: -8%;
+    width: 54%;
+    opacity: 0.8;
+  }
+
+  .hero-visual-index {
+    right: 12px;
+    bottom: 10px;
+    font-size: 7px;
+  }
+}
