@@ -1,3 +1,4 @@
+```liquid
 ---
 layout: default
 ---
@@ -50,64 +51,48 @@ layout: default
       {% if page.image %}
 
         <div class="article-hero-image">
-
           <img
             src="{{ page.image | relative_url }}"
             alt="{{ page.title | escape }}"
           >
+        </div>
+
+      {% else %}
+
+        {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
+
+        <div class="article-hero-visual hero-visual-{{ hero_visual }}">
+
+          <div class="hero-visual-grid"></div>
+
+          <div class="hero-visual-content">
+            <span>SECVORA SECURITY RESEARCH</span>
+
+            <strong>
+              {{ page.category | default: "CYBERSECURITY" | upcase }}
+            </strong>
+
+            <small>SECURITY INSIGHTS &amp; RESEARCH</small>
+          </div>
+
+          <div class="abstract-hero-art" aria-hidden="true">
+            <div class="abstract-orbit orbit-one"></div>
+            <div class="abstract-orbit orbit-two"></div>
+            <div class="abstract-core"></div>
+            <div class="abstract-node node-one"></div>
+            <div class="abstract-node node-two"></div>
+            <div class="abstract-node node-three"></div>
+            <div class="abstract-node node-four"></div>
+            <div class="abstract-beam"></div>
+          </div>
+
+          <span class="hero-visual-index" aria-hidden="true">
+            SEC / {{ hero_visual | upcase }}
+          </span>
 
         </div>
 
-      ```liquid
-{% else %}
-
-  {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
-
-  <div class="article-hero-visual hero-visual-{{ hero_visual }}">
-
-    <div class="hero-visual-grid"></div>
-
-    <div class="hero-visual-content">
-      <span>SECVORA SECURITY RESEARCH</span>
-
-      <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
-
-      <small>SECURITY INSIGHTS &amp; RESEARCH</small>
-    </div>
-
-    <div class="abstract-hero-art" aria-hidden="true">
-      <div class="abstract-orbit orbit-one"></div>
-      <div class="abstract-orbit orbit-two"></div>
-      <div class="abstract-core"></div>
-      <div class="abstract-node node-one"></div>
-      <div class="abstract-node node-two"></div>
-      <div class="abstract-node node-three"></div>
-      <div class="abstract-node node-four"></div>
-      <div class="abstract-beam"></div>
-    </div>
-
-    <span class="hero-visual-index" aria-hidden="true">
-      SEC / {{ hero_visual | upcase }}
-    </span>
-
-  </div>
-
-{% endif %}
-
-    <div class="article-hero-visual">
-      <div class="hero-visual-grid"></div>
-
-      <div class="hero-visual-content">
-        <span>SECVORA SECURITY RESEARCH</span>
-        <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
-        <small>SECURITY INSIGHTS &amp; RESEARCH</small>
-      </div>
-    </div>
-
-  {% endif %}
-
-{% endif %}
-```
+      {% endif %}
 
     </div>
 
@@ -131,11 +116,9 @@ layout: default
             {% for x in page.toc %}
 
               <li>
-
                 <a href="#{{ x.id }}">
                   {{ x.title }}
                 </a>
-
               </li>
 
             {% endfor %}
@@ -152,9 +135,7 @@ layout: default
     <div class="article-content">
 
       <div class="prose">
-
         {{ content }}
-
       </div>
 
 
@@ -183,9 +164,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore AI &amp; LLM Security
-          </h3>
+          <h3>Explore AI &amp; LLM Security</h3>
 
           <p>
             Explore modern AI and LLM security capabilities
@@ -203,7 +182,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "WAAP" %}
 
         <div class="security-resource">
@@ -212,9 +190,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore WAAP Security
-          </h3>
+          <h3>Explore WAAP Security</h3>
 
           <p>
             Learn how modern Web Application and API Protection
@@ -232,7 +208,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "API Security" %}
 
         <div class="security-resource">
@@ -241,9 +216,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore API Security
-          </h3>
+          <h3>Explore API Security</h3>
 
           <p>
             Discover modern API security approaches for
@@ -261,7 +234,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "WAF" %}
 
         <div class="security-resource">
@@ -270,9 +242,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore WAF Security
-          </h3>
+          <h3>Explore WAF Security</h3>
 
           <p>
             Learn how modern Web Application Firewall
@@ -290,7 +260,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "DDoS Protection" %}
 
         <div class="security-resource">
@@ -299,9 +268,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore DDoS Protection
-          </h3>
+          <h3>Explore DDoS Protection</h3>
 
           <p>
             Learn how modern DDoS protection helps defend
@@ -319,7 +286,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "Bot Protection" %}
 
         <div class="security-resource">
@@ -328,9 +294,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore Bot Protection
-          </h3>
+          <h3>Explore Bot Protection</h3>
 
           <p>
             Discover approaches for detecting and mitigating
@@ -348,7 +312,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "Cloud Security" %}
 
         <div class="security-resource">
@@ -357,9 +320,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore Cloud WAF Security
-          </h3>
+          <h3>Explore Cloud WAF Security</h3>
 
           <p>
             Learn how cloud-based application protection
@@ -377,7 +338,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "Threat Intelligence" %}
 
         <div class="security-resource">
@@ -386,9 +346,7 @@ layout: default
             SECURITY RESEARCH
           </div>
 
-          <h3>
-            Explore 2026 Security Research
-          </h3>
+          <h3>Explore 2026 Security Research</h3>
 
           <p>
             Explore research covering AI, API, and application
@@ -406,7 +364,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "DNS Security" %}
 
         <div class="security-resource">
@@ -415,9 +372,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore DNS Security
-          </h3>
+          <h3>Explore DNS Security</h3>
 
           <p>
             Learn how modern DNS security helps protect
@@ -435,7 +390,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "CDN" %}
 
         <div class="security-resource">
@@ -444,9 +398,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore CDN Security
-          </h3>
+          <h3>Explore CDN Security</h3>
 
           <p>
             Discover modern content delivery capabilities
@@ -464,7 +416,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "Hybrid WAF" %}
 
         <div class="security-resource">
@@ -473,9 +424,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore Hybrid WAF
-          </h3>
+          <h3>Explore Hybrid WAF</h3>
 
           <p>
             Learn about hybrid Web Application Firewall
@@ -493,7 +442,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "Kubernetes WAF" %}
 
         <div class="security-resource">
@@ -502,9 +450,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore Kubernetes WAF
-          </h3>
+          <h3>Explore Kubernetes WAF</h3>
 
           <p>
             Discover application security protection designed
@@ -521,7 +467,6 @@ layout: default
 
         </div>
 
-
       {% elsif page.category == "On-Premises WAF" %}
 
         <div class="security-resource">
@@ -530,9 +475,7 @@ layout: default
             SECURITY RESOURCE
           </div>
 
-          <h3>
-            Explore On-Premises WAF
-          </h3>
+          <h3>Explore On-Premises WAF</h3>
 
           <p>
             Learn about on-premises Web Application Firewall
@@ -569,12 +512,9 @@ layout: default
           CONTINUE READING
         </span>
 
-        <h2>
-          Related Security Insights
-        </h2>
+        <h2>Related Security Insights</h2>
 
       </div>
-
 
       <div class="related-grid">
 
@@ -603,3 +543,4 @@ layout: default
   </section>
 
 </article>
+```
