@@ -47,52 +47,42 @@ layout: default
 
       </div>
 
+      
       {% if page.image %}
-
         <div class="article-hero-image">
-
           <img
             src="{{ page.image | relative_url }}"
             alt="{{ page.title | escape }}"
           >
-
         </div>
+      {% else %}
+        {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
 
-      ```liquid
-{% else %}
+        <div class="article-hero-visual hero-visual-{{ hero_visual }}">
+          <div class="hero-visual-grid"></div>
 
-  {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
+          <div class="hero-visual-content">
+            <span>SECVORA SECURITY RESEARCH</span>
+            <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
+            <small>SECURITY INSIGHTS &amp; RESEARCH</small>
+          </div>
 
-  <div class="article-hero-visual hero-visual-{{ hero_visual }}">
+          <div class="abstract-hero-art" aria-hidden="true">
+            <div class="abstract-orbit orbit-one"></div>
+            <div class="abstract-orbit orbit-two"></div>
+            <div class="abstract-core"></div>
+            <div class="abstract-node node-one"></div>
+            <div class="abstract-node node-two"></div>
+            <div class="abstract-node node-three"></div>
+            <div class="abstract-node node-four"></div>
+            <div class="abstract-beam"></div>
+          </div>
 
-    <div class="hero-visual-grid"></div>
-
-    <div class="hero-visual-content">
-      <span>SECVORA SECURITY RESEARCH</span>
-
-      <strong>{{ page.category | default: "CYBERSECURITY" | upcase }}</strong>
-
-      <small>SECURITY INSIGHTS &amp; RESEARCH</small>
-    </div>
-
-    <div class="abstract-hero-art" aria-hidden="true">
-      <div class="abstract-orbit orbit-one"></div>
-      <div class="abstract-orbit orbit-two"></div>
-      <div class="abstract-core"></div>
-      <div class="abstract-node node-one"></div>
-      <div class="abstract-node node-two"></div>
-      <div class="abstract-node node-three"></div>
-      <div class="abstract-node node-four"></div>
-      <div class="abstract-beam"></div>
-    </div>
-
-    <span class="hero-visual-index" aria-hidden="true">
-      SEC / {{ hero_visual | upcase }}
-    </span>
-
-  </div>
-
-{% endif %}
+          <span class="hero-visual-index" aria-hidden="true">
+            SEC / {{ hero_visual | upcase }}
+          </span>
+        </div>
+      {% endif %}
 
     <div class="article-hero-visual">
       <div class="hero-visual-grid"></div>
