@@ -5,6 +5,7 @@ category: "DDoS Protection"
 category_slug: ddos-protection
 date: 2026-10-06
 permalink: /modern-ddos/
+visual: ddos-protection
 description: "Explore why modern DDoS defense requires more than network capacity and how application-aware protection can maintain service availability."
 focus_keyword: "Modern DDoS Attacks"
 visual: traffic-wave
