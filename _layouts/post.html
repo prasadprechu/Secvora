@@ -12,7 +12,7 @@ layout: default
         class="article-category"
         href="{{ '/' | append: page.category_slug | append: '/' | relative_url }}"
       >
-        {{ page.category | default: "Cybersecurity" }}
+        {{ page.category }}
       </a>
 
       <h1>{{ page.title }}</h1>
@@ -22,12 +22,12 @@ layout: default
       {% endif %}
 
       <div class="article-meta">
-        <span>{{ page.author | default: "Secvora Research" }}</span>
-        <span aria-hidden="true">•</span>
-        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+        <span>{{ page.author | default: 'Secvora Research' }}</span>
+        <span>•</span>
+        <span>{{ page.date | date: '%B %-d, %Y' }}</span>
 
         {% if page.read_time %}
-          <span aria-hidden="true">•</span>
+          <span>•</span>
           <span>{{ page.read_time }} min read</span>
         {% endif %}
       </div>
@@ -44,7 +44,8 @@ layout: default
         {% assign hero_visual = page.visual | default: page.category_slug | default: page.category | slugify %}
 
         <div class="article-hero-visual hero-visual-{{ hero_visual }}">
-          <div class="hero-visual-grid" aria-hidden="true"></div>
+
+          <div class="hero-visual-grid"></div>
 
           <div class="hero-visual-content">
             <span>SECVORA SECURITY RESEARCH</span>
@@ -66,30 +67,32 @@ layout: default
           <span class="hero-visual-index" aria-hidden="true">
             SEC / {{ hero_visual | upcase }}
           </span>
-        </div>
 
+        </div>
       {% endif %}
 
     </div>
   </header>
 
+
   <div class="container article-layout">
 
     <aside class="article-sidebar">
       {% if page.toc %}
-        <nav class="toc" aria-label="Table of contents">
+        <div class="toc">
           <span class="toc-label">IN THIS ARTICLE</span>
 
           <ul>
             {% for x in page.toc %}
               <li>
-                <a href="#{{ x.id | escape }}">{{ x.title | escape }}</a>
+                <a href="#{{ x.id }}">{{ x.title }}</a>
               </li>
             {% endfor %}
           </ul>
-        </nav>
+        </div>
       {% endif %}
     </aside>
+
 
     <div class="article-content">
 
@@ -99,7 +102,6 @@ layout: default
 
       <div class="article-takeaways">
         <div class="takeaways-label">KEY TAKEAWAYS</div>
-
         <p>
           Security teams should evaluate emerging threats,
           understand their attack surface, and combine
@@ -107,7 +109,8 @@ layout: default
         </p>
       </div>
 
-      <!-- CATEGORY-SPECIFIC PROPHAZE RESOURCE -->
+
+      <!-- SECURITY RESOURCES -->
 
       {% if page.category == "AI & LLM Security" %}
 
@@ -115,10 +118,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore AI &amp; LLM Security</h3>
           <p>
-            Explore security capabilities designed to protect
-            AI applications, models, and intelligent workloads.
+            Explore modern AI and LLM security capabilities
+            designed to protect AI applications, models,
+            and intelligent workloads.
           </p>
-          <a href="https://www.prophaze.com/platform/ai-llm-security/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/ai-llm-security/" target="_blank" rel="noopener">
             Explore Prophaze AI &amp; LLM Security →
           </a>
         </div>
@@ -129,10 +133,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore WAAP Security</h3>
           <p>
-            Learn how Web Application and API Protection helps
-            defend applications against web, API, and automated threats.
+            Learn how modern Web Application and API Protection
+            helps defend applications against evolving web,
+            API, and automated threats.
           </p>
-          <a href="https://www.prophaze.com/platform/waap-security/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/waap-security/" target="_blank" rel="noopener">
             Explore Prophaze WAAP →
           </a>
         </div>
@@ -143,10 +148,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore API Security</h3>
           <p>
-            Discover API discovery, runtime protection,
-            authentication, authorization, and threat mitigation.
+            Discover modern API security approaches for
+            API discovery, protection, runtime threats,
+            authentication, and authorization.
           </p>
-          <a href="https://www.prophaze.com/platform/api-security/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/api-security/" target="_blank" rel="noopener">
             Explore Prophaze API Security →
           </a>
         </div>
@@ -157,10 +163,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore WAF Security</h3>
           <p>
-            Learn how Web Application Firewall technology helps
-            protect applications against application-layer threats.
+            Learn how modern Web Application Firewall
+            technology helps protect applications against
+            evolving application-layer threats.
           </p>
-          <a href="https://www.prophaze.com/platform/waf-security/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/waf-security/" target="_blank" rel="noopener">
             Explore Prophaze WAF →
           </a>
         </div>
@@ -171,10 +178,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore DDoS Protection</h3>
           <p>
-            Learn how DDoS protection helps defend digital services
-            against volumetric and application-layer attacks.
+            Learn how modern DDoS protection helps defend
+            applications and digital services against
+            volumetric and application-layer attacks.
           </p>
-          <a href="https://www.prophaze.com/platform/ddos-protection/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/ddos-protection/" target="_blank" rel="noopener">
             Explore Prophaze DDoS Protection →
           </a>
         </div>
@@ -185,10 +193,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Bot Protection</h3>
           <p>
-            Discover methods for mitigating malicious automation,
-            scraping, account abuse, and bot-driven threats.
+            Discover approaches for detecting and mitigating
+            malicious automation, scraping, account abuse,
+            and other bot-driven threats.
           </p>
-          <a href="https://www.prophaze.com/platform/bot-mitigation/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/bot-mitigation/" target="_blank" rel="noopener">
             Explore Prophaze Bot Protection →
           </a>
         </div>
@@ -199,10 +208,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Cloud WAF Security</h3>
           <p>
-            Learn how cloud-based application protection can help
-            secure modern applications and workloads.
+            Learn how cloud-based application protection
+            can help secure modern applications and workloads
+            against evolving web threats.
           </p>
-          <a href="https://www.prophaze.com/platform/cloud-waf/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/cloud-waf/" target="_blank" rel="noopener">
             Explore Prophaze Cloud WAF →
           </a>
         </div>
@@ -214,9 +224,10 @@ layout: default
           <h3>Explore 2026 Security Research</h3>
           <p>
             Explore research covering AI, API, and application
-            security trends and emerging attack surfaces.
+            security trends, emerging attack surfaces, and
+            the evolving cybersecurity landscape.
           </p>
-          <a href="https://www.prophaze.com/data_reports_hub/ai-api-application-security-report-2026/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/data_reports_hub/ai-api-application-security-report-2026/" target="_blank" rel="noopener">
             Explore the 2026 Security Report →
           </a>
         </div>
@@ -227,10 +238,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore DNS Security</h3>
           <p>
-            Learn how DNS security helps protect applications and
-            users from DNS-based threats and infrastructure risks.
+            Learn how modern DNS security helps protect
+            applications and users from DNS-based threats
+            and infrastructure-level risks.
           </p>
-          <a href="https://www.prophaze.com/platform/dns-security/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/dns-security/" target="_blank" rel="noopener">
             Explore Prophaze DNS Security →
           </a>
         </div>
@@ -241,10 +253,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore CDN Security</h3>
           <p>
-            Discover content delivery capabilities designed to
-            improve application performance and availability.
+            Discover modern content delivery capabilities
+            designed to improve application performance,
+            availability, and protection.
           </p>
-          <a href="https://www.prophaze.com/platform/cdn/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/cdn/" target="_blank" rel="noopener">
             Explore Prophaze CDN →
           </a>
         </div>
@@ -255,10 +268,11 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Hybrid WAF</h3>
           <p>
-            Learn about hybrid Web Application Firewall protection
-            for flexible application security deployments.
+            Learn about hybrid Web Application Firewall
+            protection for applications requiring flexible
+            deployment and modern security controls.
           </p>
-          <a href="https://www.prophaze.com/platform/hybrid-waf/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/hybrid-waf/" target="_blank" rel="noopener">
             Explore Prophaze Hybrid WAF →
           </a>
         </div>
@@ -269,10 +283,10 @@ layout: default
           <div class="resource-eyebrow">SECURITY RESOURCE</div>
           <h3>Explore Kubernetes WAF</h3>
           <p>
-            Discover application security protection for Kubernetes
-            and cloud-native environments.
+            Discover application security protection designed
+            for Kubernetes and cloud-native environments.
           </p>
-          <a href="https://www.prophaze.com/platform/kubernetes-waf/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/kubernetes-waf/" target="_blank" rel="noopener">
             Explore Prophaze Kubernetes WAF →
           </a>
         </div>
@@ -284,9 +298,10 @@ layout: default
           <h3>Explore On-Premises WAF</h3>
           <p>
             Learn about on-premises Web Application Firewall
-            protection for dedicated security deployments.
+            protection for environments requiring dedicated
+            application security deployment.
           </p>
-          <a href="https://www.prophaze.com/platform/on-premises-waf/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.prophaze.com/platform/on-premises-waf/" target="_blank" rel="noopener">
             Explore Prophaze On-Premises WAF →
           </a>
         </div>
@@ -295,6 +310,7 @@ layout: default
 
     </div>
   </div>
+
 
   <!-- RELATED ARTICLES -->
 
