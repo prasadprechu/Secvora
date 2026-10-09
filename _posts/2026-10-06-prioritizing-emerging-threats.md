@@ -5,6 +5,7 @@ category: "Threat Intelligence"
 category_slug: threat-intelligence
 date: 2026-10-06
 permalink: /prioritizing-emerging-threats/
+visual: threat-intelligence
 description: "Learn how threat intelligence helps security teams identify emerging risks, prioritize threats, and turn security data into practical action."
 focus_keyword: "Emerging Threats"
 visual: radar
