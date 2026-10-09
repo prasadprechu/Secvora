@@ -62,53 +62,53 @@ layout: default
 
   <div class="article-hero-visual">
 
-    {% if page.visual == "shield-grid" %}
+    <div class="hero-visual-grid"></div>
 
-      <div class="hero-visual-grid"></div>
+<div class="hero-visual-content">
 
-      <div class="hero-visual-content">
+  <span>SECVORA SECURITY RESEARCH</span>
 
-        <span>SECVORA RESEARCH</span>
+  <strong>
+    WAF<br>
+    VIRTUAL PATCHING
+  </strong>
 
-        <strong>
-          WAF<br>
-          VIRTUAL PATCHING
-        </strong>
+  <small>
+    DETECT. BLOCK. PROTECT.
+  </small>
 
-        <small>
-          APPLICATION SECURITY • VULNERABILITY DEFENSE
-        </small>
+</div>
 
-      </div>
+<div class="waf-security-scene" aria-hidden="true">
 
-      <div class="hero-visual-shield">
-        S
-      </div>
+  <div class="waf-traffic waf-traffic-one">
+    HTTP REQUEST
+  </div>
 
+  <div class="waf-traffic waf-traffic-two">
+    EXPLOIT PAYLOAD
+  </div>
 
-    {% else %}
+  <div class="waf-traffic-line"></div>
 
-      <div class="hero-visual-grid"></div>
+  <div class="waf-firewall">
+    <span class="waf-shield-icon">⬡</span>
+    <strong>WAF</strong>
+    <small>RULE ACTIVE</small>
+  </div>
 
-      <div class="hero-visual-content">
+  <div class="waf-blocked">
+    <span>×</span>
+    ATTACK BLOCKED
+  </div>
 
-        <span>SECVORA RESEARCH</span>
+  <div class="waf-server">
+    <span class="server-light"></span>
+    <strong>APP</strong>
+    <small>PROTECTED</small>
+  </div>
 
-        <strong>
-          {{ page.category | upcase }}
-        </strong>
-
-        <small>
-          SECURITY INSIGHTS • THREAT ANALYSIS • RESEARCH
-        </small>
-
-      </div>
-
-      <div class="hero-visual-shield">
-        S
-      </div>
-
-    {% endif %}
+</div>
 
   </div>
 
