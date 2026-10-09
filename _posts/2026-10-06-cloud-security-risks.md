@@ -5,6 +5,7 @@ category: "Cloud Security"
 category_slug: cloud-security
 date: 2026-10-06
 permalink: /cloud-security-risks/
+visual: cloud-security
 description: "Explore major cloud security risks affecting modern applications, including identity, misconfiguration, exposed services, and supply-chain dependencies."
 focus_keyword: "Cloud Security Risks"
 visual: cloud-security
