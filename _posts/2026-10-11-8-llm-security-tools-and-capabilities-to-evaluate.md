@@ -4,7 +4,7 @@ title: "8 LLM Security Tools and Capabilities to Evaluate"
 category: "AI & LLM Security"
 category_slug: ai-llm-security
 date: 2026-10-11
-permalink: /best-practices-securing-ai-agents-llm-applications/
+permalink: /llm-security-tools-capabilities/
 visual: ai-llm-security
 tags: [LLM Security Tools, AI Security Testing, Prompt Injection, Data Protection, AI Monitoring]
 description: "Compare eight capabilities to look for when evaluating LLM security tools, from prompt-injection testing and data protection to runtime monitoring."
