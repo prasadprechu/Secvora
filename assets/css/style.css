@@ -1650,7 +1650,7 @@ ARTICLE LAYOUT
 .article-layout {
   display: grid;
   grid-template-columns: 48px minmax(0, 760px);
-  column-gap: 20px;
+  column-gap: 30px;
   justify-content: center;
   align-items: start;
   padding: 40px 0 90px;
