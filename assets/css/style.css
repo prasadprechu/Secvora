@@ -3149,7 +3149,19 @@ grid-template-columns: 1fr;
 }
 
 
-/* Force Secvora share buttons into a vertical column */
+
+/* Fix excessive spacing below the vertical share bar */
+.share-bar-container {
+  position: sticky;
+  top: 100px;
+  z-index: 50;
+  width: fit-content;
+  margin: 12px 0 16px 24px !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
 .share-bar-container .secvora-share-bar {
   display: flex !important;
   flex-direction: column !important;
@@ -3157,15 +3169,17 @@ grid-template-columns: 1fr;
   align-items: center !important;
   justify-content: flex-start !important;
   width: 64px !important;
-  gap: 12px !important;
-  padding: 14px 8px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  gap: 8px !important;
+  padding: 10px 6px !important;
+  margin: 0 !important;
 }
 
 .share-bar-container .share-bar-label {
   writing-mode: vertical-rl !important;
   transform: rotate(180deg) !important;
-  width: auto !important;
-  margin: 0 0 8px !important;
+  margin: 0 0 4px !important;
 }
 
 .share-bar-container .secvora-share-bar > a {
@@ -3174,7 +3188,18 @@ grid-template-columns: 1fr;
   float: none !important;
 }
 
+/* Keep article content layout intact */
+.article-layout {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 @media (max-width: 600px) {
+  .share-bar-container {
+    width: 100%;
+    margin: 10px 0 14px !important;
+  }
+
   .share-bar-container .secvora-share-bar {
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -3185,7 +3210,7 @@ grid-template-columns: 1fr;
   .share-bar-container .share-bar-label {
     writing-mode: horizontal-tb !important;
     transform: none !important;
-    width: 100% !important;
-    margin: 0 !important;
+    width: 100%;
+    text-align: center;
   }
 }
