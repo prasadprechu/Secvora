@@ -86,8 +86,28 @@ layout: default
     
     </div>
 
+  
   </header>
 
+  <!-- Article Share Bar -->
+  <div class="container share-bar-container">
+    <div
+      class="a2a_kit a2a_kit_size_32 a2a_default_style secvora-share-bar"
+      data-a2a-url="{{ page.url | absolute_url }}"
+      data-a2a-title="{{ page.title | escape }}"
+    >
+      <span class="share-bar-label">SHARE ARTICLE</span>
+
+      <a class="a2a_button_whatsapp" aria-label="Share on WhatsApp"></a>
+      <a class="a2a_button_facebook" aria-label="Share on Facebook"></a>
+      <a class="a2a_button_linkedin" aria-label="Share on LinkedIn"></a>
+      <a class="a2a_button_x" aria-label="Share on X"></a>
+      <a class="a2a_button_reddit" aria-label="Share on Reddit"></a>
+      <a class="a2a_button_telegram" aria-label="Share on Telegram"></a>
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_counter" href="https://www.addtoany.com/share"></a>
+    </div>
+  </div>
 
   <div class="container article-layout">
 
@@ -122,6 +142,7 @@ layout: default
       {% endif %}
 
     </aside>
+
 
 
     <div class="article-content">
