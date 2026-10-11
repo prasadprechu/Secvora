@@ -3149,70 +3149,43 @@ grid-template-columns: 1fr;
 }
 
 
-
-/* Vertical sticky share bar */
-.share-bar-container {
-  position: sticky;
-  top: 100px;
-  z-index: 50;
-  width: fit-content;
-  margin: 20px 0 24px 24px;
+/* Force Secvora share buttons into a vertical column */
+.share-bar-container .secvora-share-bar {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 64px !important;
+  gap: 12px !important;
+  padding: 14px 8px !important;
 }
 
-.secvora-share-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 10px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+.share-bar-container .share-bar-label {
+  writing-mode: vertical-rl !important;
+  transform: rotate(180deg) !important;
+  width: auto !important;
+  margin: 0 0 8px !important;
 }
 
-.share-bar-label {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: #64748b;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-
-.secvora-share-bar a {
-  display: block;
-  opacity: 0.9;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.secvora-share-bar a:hover {
-  opacity: 1;
-  transform: scale(1.08);
+.share-bar-container .secvora-share-bar > a {
+  display: block !important;
+  margin: 0 !important;
+  float: none !important;
 }
 
 @media (max-width: 600px) {
-  .share-bar-container {
-    position: sticky;
-    top: 70px;
-    width: 100%;
-    margin: 12px 0 20px;
+  .share-bar-container .secvora-share-bar {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    justify-content: center !important;
   }
 
-  .secvora-share-bar {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .share-bar-label {
-    writing-mode: horizontal-tb;
-    transform: none;
-    width: 100%;
-    text-align: center;
-    margin: 0;
+  .share-bar-container .share-bar-label {
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
