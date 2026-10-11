@@ -1,11 +1,17 @@
 ---
 layout: post
 title: "9 Best Practices for Securing AI Agents and LLM Applications"
-date: 2026-10-13
-category: ai-llm-security
-categories: [ai-llm-security]
+category: "AI & LLM Security"
+category_slug: ai-llm-security
+date: 2026-10-11
+permalink: /llm-security-tools-capabilities/
+visual: ai-llm-security
 tags: [AI Agent Security, LLM Security, Least Privilege, API Security, AI Governance]
 description: "Use these nine practical best practices to secure AI agents and LLM applications, including access control, tool validation, monitoring, and testing."
+focus_keyword: "LLM Security Tools"
+visual: neural
+read_time: 6
+author: "Secvora Research"
 ---
 
 AI agents can do more than generate text. Depending on how they are built, they may call APIs, retrieve documents, update records, or trigger workflows. Security therefore depends on the controls around the model as much as the model itself.
