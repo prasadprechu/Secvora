@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "7 AI & LLM Security Risks Every Team Should Know"
-date: 2026-10-12
-category: ai-llm-security
-categories: [ai-llm-security]
-tags: [AI Security, LLM Security, Prompt Injection, Data Leakage, AI Risk]
-description: "Explore seven important AI and LLM security risks, from prompt injection and data leakage to insecure tools and excessive agent permissions."
+category: "AI & LLM Security"
+category_slug: ai-llm-security
+date: 2026-10-11
+permalink: /7-ai-llm-security-risks/
+visual: ai-llm-security
+tags: ["AI Security", "LLM Security", "AI Security Risks", "Prompt Injection", "Data Leakage"]
+description: "Explore 7 key AI and LLM security risks, including prompt injection, data leakage, model manipulation, and excessive AI agent permissions."
 ---
 
 AI and large language models (LLMs) can help teams search information, automate workflows, and build new user experiences. But adding an AI model to an application also introduces security risks that traditional application controls may not fully address.
