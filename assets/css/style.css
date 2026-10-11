@@ -3147,3 +3147,62 @@ grid-template-columns: 1fr;
     font-size: 7px;
   }
 }
+
+
+/* Secvora sticky article share bar */
+.share-bar-container {
+  position: sticky;
+  top: 12px;
+  z-index: 50;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.secvora-share-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.07);
+}
+
+.share-bar-label {
+  margin-right: 8px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.secvora-share-bar a {
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.secvora-share-bar a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .share-bar-container {
+    top: 6px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+
+  .secvora-share-bar {
+    gap: 8px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .share-bar-label {
+    width: 100%;
+    margin-right: 0;
+  }
+}
