@@ -4,7 +4,7 @@ title: "9 Best Practices for Securing AI Agents and LLM Applications"
 category: "AI & LLM Security"
 category_slug: ai-llm-security
 date: 2026-10-11
-permalink: /llm-security-tools-capabilities/
+permalink: /best-practices-securing-ai-agents/
 visual: ai-llm-security
 tags: [AI Agent Security, LLM Security, Least Privilege, API Security, AI Governance]
 description: "Use these nine practical best practices to secure AI agents and LLM applications, including access control, tool validation, monitoring, and testing."
